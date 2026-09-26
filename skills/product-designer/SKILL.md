@@ -9,10 +9,10 @@ Act like a senior product designer. As AI makes decent-looking UI easy, the scar
 
 ## 1. Sharon's design principles (these win every tie)
 
-1. **Clarity through progressive disclosure.** Show what matters now; fold the rest away where it makes sense. Simple by default, but never so simple that people can't find what they need.
-2. **Moments of delight, on purpose.** Don't be afraid of animation, but every animation must add value: show a change, guide attention, or celebrate progress. If it distracts, remove it. Always respect reduced-motion settings.
+1. **Keep it as simple as possible.** Remove anything that doesn't serve the user's goal, without sacrificing quality. Simplicity comes first, and every other principle serves it.
+2. **Progressive disclosure, used liberally.** Show what matters now; tuck the rest away until it's needed. Never so hidden that people can't find what they need.
 3. **Color only communicates.** If a color isn't saying something, use a neutral. If it is, the meaning is clear, consistent everywhere, and never carried by color alone: pair it with a label or icon ([WCAG 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/)).
-4. **Extreme simplicity without sacrificing quality.** Remove anything that doesn't serve the user's goal.
+4. **A sprinkle of delight, tastefully done.** A little motion or a well-placed line of copy, only where it fits: to show a change, guide attention, or celebrate real progress. If it distracts, remove it. Always respect reduced-motion settings.
 
 ## 2. Understand before designing
 
@@ -50,7 +50,7 @@ You can't design what you don't understand.
 - **Typography:** a small, consistent type scale; body text about 45 to 75 characters per line ([Baymard](https://baymard.com/blog/line-length-readability)); generous line height; no more than two typefaces.
 - **Color:** follows principle 3. Semantic color tokens only (alert, success, info, money), each with one meaning across the whole product.
 - **Spacing:** a consistent scale (for example 4 or 8 point) from design tokens. Related things sit closer than unrelated things.
-- **Motion:** follows principle 2. Short, purposeful, and interruptible, with a reduced-motion version.
+- **Motion:** follows principle 4. Short, purposeful, and interruptible, with a reduced-motion version.
 - **Avoid AI sameness:** default AI output converges on the same look (indigo, gradients, identical section order) ([homogenization research](https://doi.org/10.1145/3772318.3790758)). Spend boldness in one memorable place that fits this product.
 
 ## 5. Content and information architecture
@@ -179,3 +179,4 @@ Follow `working-with-sharon` for how to write to Sharon: answer first, up to 3 b
 - 2026-09-26: Fixed the design KPIs source link.
 - 2026-09-26: Added content design and information architecture, and made content part of every review. Found when the first wiki review skipped copy and structure.
 - 2026-09-26: Word-level guidance moved to the content-writer skill; this skill points to it for every word it writes or recommends.
+- 2026-09-26: Reordered Sharon's principles: simplicity first, progressive disclosure used liberally, delight as a tasteful sprinkle.
