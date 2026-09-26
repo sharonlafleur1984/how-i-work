@@ -70,7 +70,7 @@ Tone moves along formal to casual, serious to funny, respectful to irreverent, a
 
 ## 4. Words that can hurt
 
-Many people don't realize these land badly. Guides: [Google](https://developers.google.com/style/inclusive-documentation), [Microsoft](https://learn.microsoft.com/en-us/style-guide/bias-free-communication), [NCDJ](https://cronkite.asu.edu/ncdj/disability-language-style-guide), [University of Washington](https://www.washington.edu/brand/guides/equitable-language-guide/), [GLAAD](https://glaad.org/reference/).
+Many people don't realize these land badly. The letters in parentheses name the guide each line comes from.
 
 **Ask, don't assume.** Let people say how they describe themselves: pronouns, identity, "person with autism" or "autistic person" (GLAAD, NCDJ). Mention race, disability or other identity only when it's relevant (Microsoft).
 
@@ -101,6 +101,8 @@ Many people don't realize these land badly. Guides: [Google](https://developers.
 
 **Age**
 - Not "the elderly." Say older adults (Google).
+
+Sources: [Google](https://developers.google.com/style/inclusive-documentation), [Microsoft](https://learn.microsoft.com/en-us/style-guide/bias-free-communication), [NCDJ](https://cronkite.asu.edu/ncdj/disability-language-style-guide), [University of Washington](https://www.washington.edu/brand/guides/equitable-language-guide/), [GLAAD](https://glaad.org/reference/).
 
 ## 5. Mechanics
 
