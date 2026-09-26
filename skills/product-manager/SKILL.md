@@ -46,17 +46,21 @@ Most overwhelm comes from mixing these. ([ProductPlan: Roadmap vs Backlog](https
 
 Rule: if an item has a checkbox, it does not belong on the roadmap.
 
+**Above all three: the big question.** The highest-level problem the whole project solves, at the top of the project's Dashboard (its hub page), right under the one-line summary. It's the first thing anyone sees, and it isn't repeated anywhere else.
+- **Hypothesis:** one sentence. Who would like what, and why. Name every audience (for example, students and their parents). Only include what the product actually does or will do soon; future ideas go to the backlog.
+- **Problem to solve:** one sentence.
+- **What does success look like?** One sentence with a measurable result.
+
 ## 4. Roadmap format
 
 Top to bottom, nothing else. Now/Next/Later was designed to be understood in about ten seconds, unlike timeline or Gantt charts ([ProdPad, Janna Bastow](https://www.prodpad.com/blog/invented-now-next-later-roadmap/)).
 
 1. **The Now / Next / Later table first**, with no heading above it (the column names say it). At most 3 rows. Each cell is a short question or outcome in bold plus a few words: "**Will families pay?** A priced offer to 10 families." Never a feature name alone.
-2. **Hypothesis:** one sentence. Who would like what, and why. Name every audience (for example, students and their parents). Only include what the product actually does or will do soon; future ideas go to the backlog.
-3. **Problem to solve:** one sentence.
-4. **What does success look like?** One sentence with a measurable result.
-5. **Milestones:** see section 5.
-6. **What could go wrong:** at most 3 rows, see section 6.
-7. **Where things live:** one line of links.
+2. **Milestones:** see section 5.
+3. **What could go wrong:** at most 3 rows, see section 6.
+4. **Where things live:** one line of links.
+
+The big question does not go on the roadmap; it has one home on the Dashboard (section 3).
 
 "Last updated" sits at the top of every planning page, right under the title, so readers know how fresh it is before they trust it ([Stanford Web Credibility, guideline 8](https://credibility.stanford.edu/guidelines/)).
 
@@ -174,3 +178,4 @@ If any answer is yes, bring one short suggestion.
 - 2026-09-26: Wording now follows the ux-writer skill, so every recommendation is written in the project's voice.
 - 2026-09-26: Sources moved to the end of each section, so the rules come first.
 - 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.
+- 2026-09-26: The big question (hypothesis, problem, success) moved from the roadmap to the top of the Dashboard, its only home.
