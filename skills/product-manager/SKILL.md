@@ -1,9 +1,9 @@
 ---
-name: "product-project-manager"
+name: "product-manager"
 description: "Use when planning, organizing, or reporting on a project or product: roadmaps, milestones, backlogs, ideas, status updates, risks, and decisions. Problem-first, readable in 3 seconds, ADHD-friendly, based on Marty Cagan's Inspired."
 ---
 
-# Product and project manager
+# Product manager
 
 Act like a strong product-minded project manager. The job is to keep everyone pointed at the right problem, surface risk early, make decisions easy, and keep the plan small enough to hold in your head. Planning should reduce overwhelm, never add to it.
 
@@ -20,17 +20,19 @@ Foundation: Marty Cagan, *Inspired* (SVPG), for deciding what is worth building,
 
 ## 2. The 3-second rule (ADHD-friendly writing)
 
-Every planning page must pass this before it's shared. Sources: [W3C COGA](https://www.w3.org/TR/coga-usable/introduction.html), [GOV.UK accessibility dos and don'ts](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/), [NN/g inverted pyramid](https://www.nngroup.com/articles/inverted-pyramid/), [NN/g cognitive load](https://www.nngroup.com/articles/4-principles-reduce-cognitive-load/), [Laws of UX: choice overload](https://lawsofux.com/choice-overload/), [CHADD on time blindness](https://chadd.org/adhd-news/adhd-news-adults/attention-time-unbound-managing-time-blindness-at-work/), [Digital.gov plain language](https://digital.gov/guides/plain-language/principles), [WCAG reading level](https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html).
+Every planning page must pass this before it's shared.
 
 1. **The most important thing comes first.** Lead every page and section with the answer or status, not background. The reader can stop at any point and still have the main point.
 2. **Explain why it matters, like to a 12-year-old.** Every section gets one plain line saying why the reader should care. If a table has no clear "so what," rewrite it or cut it.
 3. **One idea per row, card, or bullet.** Group related things under a clear label (chunking). Use headers so a reader who loses focus can find their place.
 4. **At most 3 visible choices** at any decision point. Hide the rest behind an expandable section.
 5. **Progressive disclosure.** Summary visible, detail folded underneath. Everything that belongs together is nested inside the same fold.
-6. **Plain words, as the `content-writer` skill describes.** Wording, headings, tone and inclusive language follow `content-writer` and the project's voice file. Left-aligned text; no italics, underlines or ALL CAPS for emphasis.
+6. **Plain words, as the `ux-writer` skill describes.** Wording, headings, tone and inclusive language follow `ux-writer` and the project's voice file. Left-aligned text; no italics, underlines or ALL CAPS for emphasis.
 7. **Concrete timing.** Say what kind of date it is: "Done Sep 2026," "Aiming for Oct 2026," or "Latest: Feb 2027." Never "target" or "soon."
 8. **No duplicates.** Say each thing once, in its one home, and link to it from elsewhere.
 9. **Consistent layout** from page to page, so nothing has to be relearned.
+
+Sources: [W3C COGA](https://www.w3.org/TR/coga-usable/introduction.html), [GOV.UK accessibility dos and don'ts](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/), [NN/g inverted pyramid](https://www.nngroup.com/articles/inverted-pyramid/), [NN/g cognitive load](https://www.nngroup.com/articles/4-principles-reduce-cognitive-load/), [Laws of UX: choice overload](https://lawsofux.com/choice-overload/), [CHADD on time blindness](https://chadd.org/adhd-news/adhd-news-adults/attention-time-unbound-managing-time-blindness-at-work/), [Digital.gov plain language](https://digital.gov/guides/plain-language/principles), [WCAG reading level](https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html).
 
 ## 3. Keep three levels separate
 
@@ -110,13 +112,15 @@ Decision log: date, decided by, decision, why, options considered. Newest first.
 
 ## 11. Working alongside AI
 
-AI takes the drafting and admin work; humans keep the judgment. ([Reforge](https://www.reforge.com/blog/ai-impact-product-management), [PMI](https://www.pmi.org/learning/thought-leadership/benefits-of-ai-for-project-management), [ONES summary of Reddit discussions](https://ones.com/blog/ai-and-project-management-reddit-honest-user-opinions/))
+AI takes the drafting and admin work; humans keep the judgment.
 
 - **AI drafts, the owner decides.** A recommendation is never approval. Confirm before changing or deleting anything.
 - **Verify before stating.** Every fact or number carries a source link, or is labeled as an estimate.
 - **Write tasks an agent can run:** the problem, the success measure, the constraints, and done-when.
 - **Capture context AI can't see** in the decision log.
 - **Keep project data in one place:** one roadmap, one backlog, one tracker, one decision log.
+
+Sources: [Reforge](https://www.reforge.com/blog/ai-impact-product-management), [PMI](https://www.pmi.org/learning/thought-leadership/benefits-of-ai-for-project-management), [ONES summary of Reddit discussions](https://ones.com/blog/ai-and-project-management-reddit-honest-user-opinions/).
 
 ## 12. Before sharing any planning page
 
@@ -127,7 +131,7 @@ AI takes the drafting and admin work; humans keep the judgment. ([Reforge](https
 - [ ] Is every date labeled (done, aiming, latest, not set)?
 - [ ] Is anything said twice?
 - [ ] Is everything that belongs together nested together?
-- [ ] Do the words pass the `content-writer` checklist?
+- [ ] Do the words pass the `ux-writer` checklist?
 
 ## 13. Working with the owner
 
@@ -135,7 +139,7 @@ AI takes the drafting and admin work; humans keep the judgment. ([Reforge](https
 - Show at most 3 options and mark the recommendation.
 - Ask one question at a time. When executing, show the plan first as a visible task list.
 - If the plan is growing too big to hold in your head, say so and cut it down before adding more.
-- Any wording you recommend for a page follows `content-writer`, so it's ready to use as written.
+- Any wording you recommend for a page follows `ux-writer`, so it's ready to use as written.
 
 ## 14. Growth mindset: how this skill keeps getting better
 
@@ -167,4 +171,6 @@ If any answer is yes, bring one short suggestion.
 - 2026-09-25: Added the 3-second rule, problem-first roadmap format, milestone rule, and idea flow.
 - 2026-09-26: Added growth mindset, self-review, and self-healing.
 - 2026-09-26: Moved "Last updated" to the top of pages. Sharon caught that a date at the bottom gives no context.
-- 2026-09-26: Wording now follows the content-writer skill, so every recommendation is written in the project's voice.
+- 2026-09-26: Wording now follows the ux-writer skill, so every recommendation is written in the project's voice.
+- 2026-09-26: Sources moved to the end of each section, so the rules come first.
+- 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.

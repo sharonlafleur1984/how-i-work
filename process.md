@@ -49,7 +49,7 @@ Track what people actually do, fix what gets in their way, and feed new problems
 
 These apply at every step.
 
-- **Skills do the craft:** [/product-project-manager](skills/product-project-manager/SKILL.md) for planning, [/product-designer](skills/product-designer/SKILL.md) for structure and screens, [/content-writer](skills/content-writer/SKILL.md) for every word, and [/portfolio-frontend-build](skills/portfolio-frontend-build/SKILL.md) for the code.
+- **Skills do the craft:** [/product-manager](skills/product-manager/SKILL.md) for planning, [/product-designer](skills/product-designer/SKILL.md) for structure and screens, [/ux-writer](skills/ux-writer/SKILL.md) for every word, and [/product-engineer](skills/product-engineer/SKILL.md) for the code.
 - **Every change is a pull request.** Code, docs and the wiki all change through pull requests I review and merge. Wiki pages live in the repo and publish on merge ([template](templates/publish-wiki.yml)).
 - **Decisions get logged:** who decided, why, and what else was considered.
 - **Everything stays findable.** Each project has one Documents page listing every document and when to open it ([template](templates/Documents.md)). Private files stay private, never in a public repo.

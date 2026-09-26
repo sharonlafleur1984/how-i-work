@@ -20,10 +20,10 @@ Start with [`docs/wiki/Documents.md`](docs/wiki/Documents.md): every document in
 
 ## Skills to use
 
-- `product-project-manager` for roadmap, backlog and status
+- `product-manager` for roadmap, backlog and status
 - `product-designer` for design, page structure and the component library
-- `content-writer` for any words people will read, with `docs/voice.md` for this project's voice
-- `portfolio-frontend-build` for any code work
+- `ux-writer` for any words people will read, with `docs/voice.md` for this project's voice
+- `product-engineer` for any code work
 - `working-with-sharon` for how to write to Sharon
 
 ## Outside the repo (private)

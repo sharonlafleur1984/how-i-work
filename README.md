@@ -19,10 +19,10 @@ I'm Sharon LaFleur, a product designer with about 8 years of experience. This is
 
 These are read-only copies of the working versions in my Claude account, updated whenever a skill changes. Each one reviews itself after use and suggests improvements for me to approve, and its change log shows how it has grown.
 
-- **[`/product-project-manager`](skills/product-project-manager/SKILL.md):** plans problem-first. A roadmap you can read in 3 seconds, a researched backlog, milestones, risks and decisions. Based on Marty Cagan's *Inspired*.
+- **[`/product-manager`](skills/product-manager/SKILL.md):** plans problem-first. A roadmap you can read in 3 seconds, a researched backlog, milestones, risks and decisions. Based on Marty Cagan's *Inspired*.
 - **[`/product-designer`](skills/product-designer/SKILL.md):** designs and reviews screens and pages. My design principles, UX laws, heuristics, information architecture, WCAG 2.2, and AI and agentic design. Gates what enters the component library.
-- **[`/content-writer`](skills/content-writer/SKILL.md):** writes every word people read. Show first, as few words as clarity allows, respectful and a little fun. Also helps write better AI prompts.
-- **[`/portfolio-frontend-build`](skills/portfolio-frontend-build/SKILL.md):** turns a prototype built with AI into a real, tested codebase with design tokens and Storybook.
+- **[`/ux-writer`](skills/ux-writer/SKILL.md):** writes every word people read. Show first, as few words as clarity allows, respectful and a little fun. Also helps write better AI prompts.
+- **[`/product-engineer`](skills/product-engineer/SKILL.md):** turns a prototype built with AI into a real, tested product, front end and back end, with design tokens and Storybook.
 
 ## Projects that use this
 
