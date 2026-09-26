@@ -2,7 +2,7 @@
 
 **Last updated:** [date]
 
-How [project name] sounds. The craft rules (plain language, no flattery, words that can hurt) come from the [content-writer skill](https://github.com/sharonlafleur1984/how-i-work/blob/main/skills/content-writer/SKILL.md). This file sets the voice for each audience.
+How [project name] sounds. The craft rules (plain language, no flattery, words that can hurt) come from the [ux-writer skill](https://github.com/sharonlafleur1984/how-i-work/blob/main/skills/ux-writer/SKILL.md). This file sets the voice for each audience.
 
 **In one line:** [who it sounds like, for example "a calm, capable friend who tells you straight"].
 

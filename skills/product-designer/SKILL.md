@@ -9,10 +9,10 @@ Act like a senior product designer. As AI makes decent-looking UI easy, the scar
 
 ## 1. Sharon's design principles (these win every tie)
 
-1. **Clarity through progressive disclosure.** Show what matters now; fold the rest away where it makes sense. Simple by default, but never so simple that people can't find what they need.
-2. **Moments of delight, on purpose.** Don't be afraid of animation, but every animation must add value: show a change, guide attention, or celebrate progress. If it distracts, remove it. Always respect reduced-motion settings.
+1. **Keep it as simple as possible.** Remove anything that doesn't serve the user's goal, without sacrificing quality. Simplicity comes first, and every other principle serves it.
+2. **Progressive disclosure, used liberally.** Show what matters now; tuck the rest away until it's needed. Never so hidden that people can't find what they need.
 3. **Color only communicates.** If a color isn't saying something, use a neutral. If it is, the meaning is clear, consistent everywhere, and never carried by color alone: pair it with a label or icon ([WCAG 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/)).
-4. **Extreme simplicity without sacrificing quality.** Remove anything that doesn't serve the user's goal.
+4. **A sprinkle of delight, tastefully done.** A little motion or a well-placed line of copy, only where it fits: to show a change, guide attention, or celebrate real progress. If it distracts, remove it. Always respect reduced-motion settings.
 
 ## 2. Understand before designing
 
@@ -50,14 +50,14 @@ You can't design what you don't understand.
 - **Typography:** a small, consistent type scale; body text about 45 to 75 characters per line ([Baymard](https://baymard.com/blog/line-length-readability)); generous line height; no more than two typefaces.
 - **Color:** follows principle 3. Semantic color tokens only (alert, success, info, money), each with one meaning across the whole product.
 - **Spacing:** a consistent scale (for example 4 or 8 point) from design tokens. Related things sit closer than unrelated things.
-- **Motion:** follows principle 2. Short, purposeful, and interruptible, with a reduced-motion version.
+- **Motion:** follows principle 4. Short, purposeful, and interruptible, with a reduced-motion version.
 - **Avoid AI sameness:** default AI output converges on the same look (indigo, gradients, identical section order) ([homogenization research](https://doi.org/10.1145/3772318.3790758)). Spend boldness in one memorable place that fits this product.
 
 ## 5. Content and information architecture
 
 Words and structure are design. On text-heavy pages (docs, wikis, dashboards, forms), they are most of the design.
 
-**Information architecture: can people find it?** ([NN/g: IA vs navigation](https://www.nngroup.com/articles/ia-vs-navigation/), [Morville's UX honeycomb](https://semanticstudios.com/user_experience_design/))
+**Information architecture: can people find it?**
 - Group by how people think, not how the system or team is organized. Test groupings with a card sort when unsure ([NN/g card sorting](https://www.nngroup.com/articles/card-sorting-definition/)).
 - Every page has one job. If a page does two jobs, split it. If two pages do one job, merge them.
 - One clear home for each piece of information; everything else links to it.
@@ -71,9 +71,11 @@ Words and structure are design. On text-heavy pages (docs, wikis, dashboards, fo
 - Emphasis is rare. If more than one phrase per section is bold, nothing stands out.
 - Show freshness: "Last updated" sits at the top, right under the title, so readers know how old the page is before they trust it ([Stanford Web Credibility, guideline 8](https://credibility.stanford.edu/guidelines/)).
 
-**The words themselves** follow the `content-writer` skill and the project's voice file (`docs/voice.md`). That covers tone, word choice, headings, inclusive language and product copy. Use it for every word you write or recommend, so reviews and rewrites sound like one voice.
+**The words themselves** follow the `ux-writer` skill and the project's voice file (`docs/voice.md`). That covers tone, word choice, headings, inclusive language and product copy. Use it for every word you write or recommend, so reviews and rewrites sound like one voice.
 
 **Content review checklist:** Is the page's job clear in 3 seconds? Is anything said twice? Are labels consistent across pages? Does every heading tell you something? Is the date visible? What can be cut?
+
+Sources: [NN/g: IA vs navigation](https://www.nngroup.com/articles/ia-vs-navigation/), [Morville's UX honeycomb](https://semanticstudios.com/user_experience_design/).
 
 ## 6. Accessibility (WCAG 2.2 AA, every component)
 
@@ -88,7 +90,7 @@ Words and structure are design. On text-heavy pages (docs, wikis, dashboards, fo
 
 ## 7. Designing AI and agentic experiences
 
-AI changes the interaction from telling the computer how, step by step, to telling it what outcome you want ([NN/g](https://www.nngroup.com/articles/ai-paradigm/)). Sources: [Microsoft Human-AI Interaction guidelines](https://www.microsoft.com/en-us/research/blog/guidelines-for-human-ai-interaction-design/), [Google PAIR Guidebook](https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/), [Apple HIG: Generative AI](https://developer.apple.com/design/human-interface-guidelines/generative-ai).
+AI changes the interaction from telling the computer how, step by step, to telling it what outcome you want ([NN/g](https://www.nngroup.com/articles/ai-paradigm/)).
 
 1. **Set expectations.** Say what the AI can and can't do, and how well.
 2. **Don't rely on prompts alone.** Most people struggle to put intent into words, so pair prompts with buttons, choices, and examples ([articulation barrier, NN/g](https://www.nngroup.com/articles/ai-articulation-barrier/)).
@@ -103,9 +105,11 @@ AI changes the interaction from telling the computer how, step by step, to telli
 
 The agentic field is young: re-check this section often (see section 12).
 
+Sources: [Microsoft Human-AI Interaction guidelines](https://www.microsoft.com/en-us/research/blog/guidelines-for-human-ai-interaction-design/), [Google PAIR Guidebook](https://pair.withgoogle.com/guidebook-v2/chapter/explainability-trust/), [Apple HIG: Generative AI](https://developer.apple.com/design/human-interface-guidelines/generative-ai).
+
 ## 8. Reviewing designs
 
-**Heuristic review** ([NN/g](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/)): walk each key task, check against the 10 heuristics, the Laws of UX, the structure checks in section 5, the `content-writer` checklist for the words, accessibility in section 6, and Sharon's principles. Review the words and the organization, not just the look: on text-heavy pages, content is the design. Rate each issue ([severity 0 to 4](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/)): 0 not a problem, 1 cosmetic, 2 minor, 3 major, 4 blocks release. Lead with the fix, not just the flaw.
+**Heuristic review** ([NN/g](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/)): walk each key task, check against the 10 heuristics, the Laws of UX, the structure checks in section 5, the `ux-writer` checklist for the words, accessibility in section 6, and Sharon's principles. Review the words and the organization, not just the look: on text-heavy pages, content is the design. Rate each issue ([severity 0 to 4](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/)): 0 not a problem, 1 cosmetic, 2 minor, 3 major, 4 blocks release. Lead with the fix, not just the flaw.
 
 **Critique** ([Discussing Design](https://www.oreilly.com/library/view/discussing-design/9781491902394/)): critique the work against its goals, never the person. Separate a reaction ("I don't like it") from analysis ("this hides the primary action"). Bring evidence over opinion.
 
@@ -122,7 +126,7 @@ Nothing enters the component library until it passes. Automatic checks decide mo
 
 **Designer review (this skill)**
 - Heuristic and principles check, severity 3 or 4 issues fixed
-- Every label, empty state and error message checked against `content-writer`
+- Every label, empty state and error message checked against `ux-writer`
 - Does this need to exist, or does an existing component already do the job?
 
 **Sharon approves only judgment calls**
@@ -133,7 +137,7 @@ Nothing enters the component library until it passes. Automatic checks decide mo
 
 ## 10. The skills people overlook
 
-Hiring research and experience agree: craft is the price of admission; these are the differentiators ([NN/g career advice](https://www.nngroup.com/articles/ux-career-advice/), [MeasuringU](https://measuringu.com/what-hiring-managers-want-and-what-ux-practitioners-do/)).
+Hiring research and experience agree: craft is the price of admission; these are the differentiators.
 
 - **Editing and cutting.** Choosing the right option out of many, and removing what isn't needed.
 - **Writing.** Labels, empty states, and error messages are design.
@@ -144,9 +148,13 @@ Hiring research and experience agree: craft is the price of admission; these are
 - **Business and systems sense.** Connect design choices to the problem, the business, and the whole product.
 - **Curiosity and humility.** You are not the user. Test.
 
+Sources: [NN/g career advice](https://www.nngroup.com/articles/ux-career-advice/), [MeasuringU](https://measuringu.com/what-hiring-managers-want-and-what-ux-practitioners-do/).
+
 ## 11. Measuring design
 
-Pick a few design measures per project, tied to its goals ([Vitaly Friedman, Design KPIs and UX Metrics](https://www.linkedin.com/pulse/design-kpis-ux-metrics-vitaly-friedman), [Smashing Magazine](https://www.smashingmagazine.com/2022/04/boosting-ux-with-design-kpis/)): task success rate, time to complete key tasks, error rate and recovery, System Usability Scale, and WCAG AA coverage. Re-test the same tasks over time.
+Pick a few design measures per project, tied to its goals: task success rate, time to complete key tasks, error rate and recovery, System Usability Scale, and WCAG AA coverage. Re-test the same tasks over time.
+
+Sources: [Vitaly Friedman, Design KPIs and UX Metrics](https://www.linkedin.com/pulse/design-kpis-ux-metrics-vitaly-friedman), [Smashing Magazine](https://www.smashingmagazine.com/2022/04/boosting-ux-with-design-kpis/).
 
 ## 12. Growth mindset: how this skill keeps getting better
 
@@ -178,4 +186,7 @@ Follow `working-with-sharon` for how to write to Sharon: answer first, up to 3 b
 - 2026-09-26: Created from About Face, Laws of UX, NN/g, WCAG 2.2, Microsoft, Google PAIR and Apple AI guidance, design system governance research, hiring research, Sharon's design principles, and 30+ articles she shared.
 - 2026-09-26: Fixed the design KPIs source link.
 - 2026-09-26: Added content design and information architecture, and made content part of every review. Found when the first wiki review skipped copy and structure.
-- 2026-09-26: Word-level guidance moved to the content-writer skill; this skill points to it for every word it writes or recommends.
+- 2026-09-26: Word-level guidance moved to the ux-writer skill; this skill points to it for every word it writes or recommends.
+- 2026-09-26: Reordered Sharon's principles: simplicity first, progressive disclosure used liberally, delight as a tasteful sprinkle.
+- 2026-09-26: Sources moved to the end of each section, so the rules come first.
+- 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.

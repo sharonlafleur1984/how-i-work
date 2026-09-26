@@ -1,13 +1,13 @@
 ---
-name: "portfolio-frontend-build"
-description: "Use when moving a front end built in Claude artifacts or prompts into a real GitHub repo: bring the prototype in as-is, then rebuild it as clean, readable, tested code a designer can explore, store, and grow."
+name: "product-engineer"
+description: "Use for any code work, front end or back end: move a prototype built in Claude artifacts or prompts into a real GitHub repo, then build and grow it as clean, readable, accessible, tested code."
 ---
 
-# From artifact to real repo: portfolio-grade front-end build
+# Product engineer
 
-The starting point is usually a prototype built through prompts (a Claude artifact or a single HTML file). The goal is to move it into a real GitHub repo the owner can open, read, change, and store, then level it up into a codebase another front-end designer would study: every file easy to find, every decision written down, every screen accessible, tests that keep it healthy over time, and design and code that stay in sync. Combine a distinctive design with disciplined engineering. Spend boldness in one memorable place; keep everything around it quiet and consistent.
+The starting point is usually a prototype built through prompts (a Claude artifact or a single HTML file). The goal is to move it into a real GitHub repo the owner can open, read, change, and store, then grow it into a codebase anyone can pick up: every file easy to find, every decision written down, every screen accessible, tests that keep it healthy over time, and design and code that stay in sync. Combine a distinctive design with disciplined engineering. Spend boldness in one memorable place; keep everything around it quiet and consistent.
 
-## Start from the artifact
+## Start from the prototype
 
 1. Bring the prototype into the repo exactly as it works today, on its own branch, so there is a known-good version to compare against.
 2. Swap any real personal data for sample data before the first commit. Turn off any live backend keys in the copy.
@@ -128,6 +128,7 @@ Nesting rules:
 - Prefer composition (children and named slots) over long prop lists. If a component needs more than about 8 props, split it or turn it into a composite.
 - A component promotes up a level only when it is reused in 3 or more places. Do not build a pattern for a one-off.
 - Features own data and state; components, composites, and patterns receive data through props and stay pure.
+- Charts use [Chart.js](https://www.chartjs.org/) (through [react-chartjs-2](https://react-chartjs-2.js.org/) in React), with colors from design tokens and animation off when reduced motion is on. Chart.js draws on a canvas that screen readers can't read, so every chart gets a text label and a fallback description or data table ([Chart.js accessibility](https://www.chartjs.org/docs/latest/general/accessibility.html)). The product-designer skill decides what a chart should show.
 
 Every item at levels 2 to 4 ships with: markup, styles, behavior, tests, an a11y note, a Storybook page, and a docs page listing variants, states (default, hover, focus, active, disabled, loading, empty, error), and do/don't examples. Pattern pages also say when to use it, when not to, and which components it is built from. Storybook is grouped by level (Tokens, Components, Composites, Patterns, Pages) so the hierarchy is visible. Button hierarchy: one primary per screen, secondary for alternatives, tertiary text for side trips.
 
@@ -234,3 +235,4 @@ If any answer is yes, bring one short suggestion.
 - 2026-09-25: Created from front-end best practice research.
 - 2026-09-25: Reframed around moving from a Claude artifact to a real repo; added nesting and patterns, prototype matching, the design and code loop, and learning mode.
 - 2026-09-26: Added growth mindset, self-review, and self-healing.
+- 2026-09-26: Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts.

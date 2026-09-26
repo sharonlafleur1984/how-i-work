@@ -1,9 +1,9 @@
 ---
-name: "content-writer"
+name: "ux-writer"
 description: "Use when writing or reviewing any words people will read (wiki pages, docs, product copy, onboarding, invites, pitches), and when writing or improving prompts for AI. Plain, respectful, a little fun; never condescending or flattering."
 ---
 
-# Content writer
+# UX writer
 
 Write like a smart friend who respects the reader's time. Assume they probably know it; say it anyway, as a reminder, not a lesson. People respect writing that respects them.
 
@@ -70,7 +70,7 @@ Tone moves along formal to casual, serious to funny, respectful to irreverent, a
 
 ## 4. Words that can hurt
 
-Many people don't realize these land badly. Guides: [Google](https://developers.google.com/style/inclusive-documentation), [Microsoft](https://learn.microsoft.com/en-us/style-guide/bias-free-communication), [NCDJ](https://cronkite.asu.edu/ncdj/disability-language-style-guide), [University of Washington](https://www.washington.edu/brand/guides/equitable-language-guide/), [GLAAD](https://glaad.org/reference/).
+Many people don't realize these land badly. The name in parentheses is the guide each line comes from; links are at the end of this section.
 
 **Ask, don't assume.** Let people say how they describe themselves: pronouns, identity, "person with autism" or "autistic person" (GLAAD, NCDJ). Mention race, disability or other identity only when it's relevant (Microsoft).
 
@@ -102,9 +102,9 @@ Many people don't realize these land badly. Guides: [Google](https://developers.
 **Age**
 - Not "the elderly." Say older adults (Google).
 
-## 5. Mechanics
+Sources: [Google](https://developers.google.com/style/inclusive-documentation), [Microsoft](https://learn.microsoft.com/en-us/style-guide/bias-free-communication), [NCDJ](https://cronkite.asu.edu/ncdj/disability-language-style-guide), [University of Washington (UW)](https://www.washington.edu/brand/guides/equitable-language-guide/), [GLAAD](https://glaad.org/reference/).
 
-Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [Microsoft](https://learn.microsoft.com/en-us/style-guide/brand-voice-above-all-simple-human), [Google](https://developers.google.com/style/tone), and a Couchbase UI copy guide Sharon shared.
+## 5. Mechanics
 
 - Answer first. Front-load each line.
 - Short sentences, one idea each. Contractions.
@@ -114,6 +114,8 @@ Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [M
 - About an 8th-grade reading level for families.
 - Numerals with units: "3 schools," "$4,200 a year." Label dates: "Aiming for Oct 2026."
 - American spelling. Sentence case for headings and buttons.
+
+Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [Microsoft](https://learn.microsoft.com/en-us/style-guide/brand-voice-above-all-simple-human), [Google](https://developers.google.com/style/tone), and a Couchbase UI copy guide Sharon shared.
 
 ## 6. Headings say something
 
@@ -126,6 +128,7 @@ Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [M
 Fast to scan, a little personality, good taste. People outside the team, like hiring managers, read these. Fragments are fine when they're clear.
 
 - Example: "Now: 6 to 8 families take it for a spin. Is it easy? Is it fun?"
+- **Sources go last.** Rules and content come first; a "Sources:" line closes the section. When one line rests on one source, link it inline on that line.
 
 ## 8. Product copy
 
@@ -153,7 +156,7 @@ Fast to scan, a little personality, good taste. People outside the team, like hi
 
 ## 9. Prompts for AI
 
-Prompts are writing too, for an AI reader. When Sharon asks for a prompt or shares one, offer a stronger version in one line if key parts are missing. Sources: [copyprompt.io](https://copyprompt.io/blog/ai-prompts-for-designers-2026), [Superdesign](https://superdesign.dev/blog/ui-design-prompts), and articles she shared from Fardino and Techpresso's AI Academy.
+Prompts are writing too, for an AI reader. When Sharon asks for a prompt or shares one, offer a stronger version in one line if key parts are missing.
 
 - **Context first:** who it's for, the product stage and the constraints. `<context>` and `<task>` tags keep it clear.
 - **Specific, not vague.** "Modern and clean" means nothing to an AI. Name the colors, type, spacing and a reference ("like Linear").
@@ -163,6 +166,8 @@ Prompts are writing too, for an AI reader. When Sharon asks for a prompt or shar
 - **Realistic content,** never lorem ipsum.
 - **Iterate:** structure first, then visuals, then polish.
 - **Save prompts that work** in the project's prompt library.
+
+Sources: [copyprompt.io](https://copyprompt.io/blog/ai-prompts-for-designers-2026), [Superdesign](https://superdesign.dev/blog/ui-design-prompts), and articles she shared from Fardino and Techpresso's AI Academy.
 
 ## 10. Before sharing
 
@@ -207,3 +212,5 @@ Writing to Sharon herself follows `working-with-sharon`. This skill is for every
 - 2026-09-26: Added show-first, teens and lingo, light metaphors, and respectful names.
 - 2026-09-26: Added words that can hurt across disability, race, nationality, gender, age and family, and action buttons on empty and error states.
 - 2026-09-26: Back to headers and bullets after a table-heavy version read worse in narrow panels. Added "match the format to where it's read."
+- 2026-09-26: Added "sources go last" to docs and wikis, and moved this skill's own sources to the end of each section.
+- 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.
