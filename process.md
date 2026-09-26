@@ -6,52 +6,53 @@ How a project goes from a problem to shipped work. AI drafts; I decide. Nothing 
 
 ```mermaid
 flowchart LR
-  A[Problem] --> B[Roadmap] --> C[Tasks] --> D[Test cheaply] --> E{Worth building?}
-  E -- Yes --> F[Build, one pull request at a time] --> G[Learn and improve]
-  E -- No --> H[Stop or rethink]
+  A[1. Start with the problem] --> B[2. Put it on the roadmap] --> C[3. Research] --> D[4. Test cheaply] --> E{5. Build or stop?}
+  E -- Build --> F[6. Build in small tasks] --> G[7. Learn and improve]
+  E -- Stop --> H[Rethink the problem]
   I[Backlog of ideas] -. once decided .-> B
+  G -. new problems .-> A
 ```
 
-## 1. Start with the problem
+## The flow
 
-Every roadmap item, idea and task names the problem it solves and what success looks like. If the problem can't be named, it isn't ready. Success is measured by the problem getting solved, not by shipping on time. ([product-project-manager](skills/product-project-manager/SKILL.md))
+### 1. Start with the problem
 
-## 2. Plan in three levels, kept separate
+Every roadmap item, idea and task names the problem it solves and what success looks like. If the problem can't be named, it isn't ready. Success means the problem got solved, not that something shipped on time.
 
-How they connect: the roadmap picks the problems, tasks do the work, and the backlog holds ideas that may or may not ever make it in.
+### 2. Put it on the roadmap
 
-- **Roadmap:** Now, Next, Later. The problems we're solving and the milestones that show they're solved, readable in 3 seconds.
-- **Tasks:** GitHub Issues. Each roadmap problem breaks down into tasks that state their problem and "done when." Big work becomes a parent issue with sub-issues, in the order they depend on each other.
-- **Backlog:** every idea not on the roadmap yet. Ideas move from Idea → Researched → my decision → Decided, and only a decided idea moves up to the roadmap. Many never do, and that's fine.
+Now, Next, Later: the problems being solved and the milestones that show they're solved, readable in 3 seconds.
 
-## 3. Research before building
+Ideas that aren't on the roadmap wait in the backlog. They move from Idea → Researched → my decision → Decided, and only a decided idea joins the roadmap. Many never do, and that's fine.
 
-- Competitor features get the same test: what problem does it solve, and is there a better or more current way? Copy only when there isn't.
+### 3. Research
+
+- Competitor features get one test: what problem does it solve, and is there a better or more current way? Copy only when there isn't.
 - Small, easy-to-undo choices need a sourced principle. Big bets need evidence from real people.
 - Every fact gets a source link, or a label saying it's an estimate.
 
-## 4. Test cheaply first
+### 4. Test cheaply
 
-Usability sessions and small tests come before the big build. Then the results decide: build one route, or stop and rethink.
+Usability sessions and small tests with real people, before the big build.
 
-## 5. Design and write with the skills
+### 5. Build or stop?
 
-- [product-designer](skills/product-designer/SKILL.md) for structure, screens and the component library gate
-- [content-writer](skills/content-writer/SKILL.md) for every word, using the project's voice file
-- [portfolio-frontend-build](skills/portfolio-frontend-build/SKILL.md) for the code
+The test results decide: build one route, or stop and rethink the problem. Stopping early is a win; it saves the months a wrong build would cost.
 
-## 6. Every change is a pull request
+### 6. Build in small tasks
 
-- Code, docs and the wiki all change through pull requests that I review and merge.
-- Wiki pages live in the repo (`docs/wiki/`) and publish to the wiki tab on merge ([template](templates/publish-wiki.yml)).
-- Decisions go in a decision log with who decided, why, and what else was considered.
+Each roadmap problem breaks into tasks in GitHub Issues. Every task states its problem and "done when." Big work becomes a parent issue with sub-issues, in the order they depend on each other.
 
-## 7. Keep everything findable
+### 7. Learn and improve
 
-- Each project has one Documents page listing every document and when to open it ([template](templates/Documents.md)).
-- My private Notion index lists every document across projects.
-- Private files stay private: originals in Google Drive, never in a public repo.
+Track what people actually do, fix what gets in their way, and feed new problems back to step 1.
 
-## 8. Keep getting better
+## Along the way
 
-Every skill reviews itself after a task, and when something could be better, it proposes one change for me to approve. The change log at the bottom of each skill shows what changed and why.
+These apply at every step.
+
+- **Skills do the craft:** [/product-project-manager](skills/product-project-manager/SKILL.md) for planning, [/product-designer](skills/product-designer/SKILL.md) for structure and screens, [/content-writer](skills/content-writer/SKILL.md) for every word, and [/portfolio-frontend-build](skills/portfolio-frontend-build/SKILL.md) for the code.
+- **Every change is a pull request.** Code, docs and the wiki all change through pull requests I review and merge. Wiki pages live in the repo and publish on merge ([template](templates/publish-wiki.yml)).
+- **Decisions get logged:** who decided, why, and what else was considered.
+- **Everything stays findable.** Each project has one Documents page listing every document and when to open it ([template](templates/Documents.md)). Private files stay private, never in a public repo.
+- **The skills keep getting better.** Each one reviews itself after a task and proposes one change for me to approve. Its change log shows what changed and why.
