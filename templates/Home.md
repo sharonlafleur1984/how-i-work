@@ -4,10 +4,6 @@
 
 [One line: what it is and who it's for.]
 
-## The big question
-
-The highest-level problem this whole project is solving.
-
 **Hypothesis:** [Who] would like [what], because [why].
 
 **Problem to solve:** [What we don't know yet, in one sentence.]
