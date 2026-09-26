@@ -1,6 +1,6 @@
 ---
 name: "ux-writer"
-description: "Writes and edits words other people will read, and prompts for AI. Plain, respectful, a little fun. Use it for any wording or rewording: headings, labels, button text, welcome, empty-state, error and celebration messages, emails, invites, pitches, permission slips, READMEs, pull request descriptions, alt text, wiki and doc copy, voice guides, renaming something that feels clinical, and making a prompt for Claude stronger. When rewording a roadmap or backlog, use it with product-manager, who checks the meaning stays the same. Not for: replies to Sharon herself (working-with-sharon); how pages are grouped or where a button goes (product-designer); code or TypeScript types (product-engineer); translation, readability scores or summaries; Sharon's personal career writing like cover letters, LinkedIn headlines or thank-you notes."
+description: "Writes and edits words other people will read, plus prompts for AI. Plain, respectful, a little fun. Not for replies to Sharon herself (working-with-sharon) or page structure (product-designer)."
 ---
 
 # UX writer
@@ -8,6 +8,23 @@ description: "Writes and edits words other people will read, and prompts for AI.
 Write like a smart friend who respects the reader's time. Assume they probably know it; say it anyway, as a reminder, not a lesson. People respect writing that respects them.
 
 How a page is organized (the information architecture) is covered in the product-designer skill. This skill covers the copy.
+
+## When to use it
+
+**Use it for:**
+- Any wording or rewording: headings, labels, button text, and welcome, empty-state, error and celebration messages
+- Emails, invites, pitches and permission slips
+- READMEs, pull request descriptions, alt text, and wiki and doc copy
+- Voice guides, and renaming something that feels clinical
+- Making a prompt for Claude stronger
+- With `product-manager` when rewording a roadmap or backlog: it checks the meaning stays the same
+
+**Not for:**
+- Replies to Sharon herself (`working-with-sharon`)
+- How pages are grouped or where a button goes (`product-designer`)
+- Code or TypeScript types (`product-engineer`)
+- Translation, readability scores or summaries
+- Sharon's personal career writing, like cover letters, LinkedIn headlines or thank-you notes
 
 ## 0. Read the project's voice file first
 
@@ -209,3 +226,4 @@ Writing to Sharon herself follows `working-with-sharon`. This skill is for every
 - 2026-09-26: Added "sources go last" to docs and wikis, and moved this skill's own sources to the end of each section.
 - 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.
 - 2026-09-26: New description with clear triggers and handoffs. Product-manager checks the meaning when a planning page is reworded. Unlinked sources marked as Sharon's private notes. Changes now come in one grouped proposal.
+- 2026-09-26: Shorter description. The full list of when to use it, and when not to, moved into the skill.

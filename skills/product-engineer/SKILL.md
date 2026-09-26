@@ -1,11 +1,28 @@
 ---
 name: "product-engineer"
-description: "Builds and fixes code, front end and back end, as clean, accessible, tested code in a real GitHub repo. Use it to move a prototype (a Claude artifact or a single HTML file) into a repo, rebuild it in React, TypeScript and Storybook, set up Supabase accounts and data, fix failing builds, CI or lint errors, make design tokens and sync them with Figma variables, write Playwright and accessibility tests, fix keyboard and focus bugs, refactor components, add analytics like PostHog, and build charts with Chart.js once product-designer has designed them. Not for: what screens should look like or which chart type to use (product-designer); error messages, PR descriptions or other wording (ux-writer); whether or when to build something, or its risks (product-manager); explaining a concept to learn it, spreadsheets, wiki link fixes, scheduled tasks, or career choices."
+description: "Builds and fixes code, front end and back end, as clean, accessible, tested code in a real GitHub repo. Not for how screens look (product-designer), wording (ux-writer) or whether to build something (product-manager)."
 ---
 
 # Product engineer
 
 The starting point is usually a prototype built through prompts (a Claude artifact or a single HTML file). The goal is to move it into a real GitHub repo Sharon can open, read, change, and store, then grow it into a codebase anyone can pick up: every file easy to find, every decision written down, every screen accessible, tests that keep it healthy over time, and design and code that stay in sync.
+
+## When to use it
+
+**Use it for:**
+- Moving a prototype (a Claude artifact or a single HTML file) into a repo, and rebuilding it in React, TypeScript and Storybook
+- Supabase accounts and data
+- Failing builds, CI or lint errors
+- Design tokens and syncing them with Figma variables
+- Playwright and accessibility tests, keyboard and focus bugs, and refactoring components
+- Analytics like PostHog
+- Charts with Chart.js, once `product-designer` has designed them
+
+**Not for:**
+- What screens should look like or which chart type to use (`product-designer`)
+- Error messages, pull request descriptions or other wording (`ux-writer`)
+- Whether or when to build something, or its risks (`product-manager`)
+- Explaining a concept to learn it, spreadsheets, wiki link fixes, scheduled tasks, or career choices
 
 ## Start from the prototype
 
@@ -223,3 +240,4 @@ Source: Carol Dweck's *Mindset* ([Farnam Street summary](https://fs.blog/carol-d
 - 2026-09-26: Added growth mindset, self-review, and self-healing.
 - 2026-09-26: Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts.
 - 2026-09-26: New description with clear triggers and handoffs. Charts get built only from a design already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal.
+- 2026-09-26: Shorter description. The full list of when to use it, and when not to, moved into the skill.
