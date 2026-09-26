@@ -10,9 +10,11 @@ Every roadmap item, idea and task names the problem it solves. If the problem ca
 
 ## 2. Plan in three levels, kept separate
 
-- **Roadmap:** Now, Next, Later. Problems and milestones only, readable in 3 seconds.
-- **Backlog:** every idea, moving from Idea → Researched → my decision → Decided. Nothing reaches me for a decision until it's researched.
-- **Tasks:** GitHub Issues. Each one states its problem and "done when." Big work becomes a parent issue with sub-issues, in the order they're blocked.
+How they connect: the roadmap picks the problems, tasks do the work, and the backlog holds ideas that may or may not ever make it in.
+
+- **Roadmap:** Now, Next, Later. The problems we're solving and the milestones that show they're solved, readable in 3 seconds.
+- **Tasks:** GitHub Issues. Each roadmap problem breaks down into tasks that state their problem and "done when." Big work becomes a parent issue with sub-issues, in the order they're blocked.
+- **Backlog:** every idea not on the roadmap yet. Ideas move from Idea → Researched → my decision → Decided, and only a decided idea moves up to the roadmap. Many never do, and that's fine.
 
 ## 3. Research before building
 
