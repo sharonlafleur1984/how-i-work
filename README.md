@@ -4,7 +4,10 @@
 
 I'm Sharon LaFleur, a product designer with about 8 years of experience. This is how I design and build products with AI: the process I follow, the Claude skills that guide the work, and the templates every project starts from.
 
-My design philosophy in one line: moments of delight with extreme simplicity.
+**My design philosophy:**
+- Keep it as simple as possible.
+- Show what matters now, and tuck the rest away until it's needed (progressive disclosure).
+- Add a little delight, in motion or in words, only where it fits and always with taste.
 
 ## What's here
 
