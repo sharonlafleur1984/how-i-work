@@ -29,4 +29,4 @@ Start with [`docs/wiki/Documents.md`](docs/wiki/Documents.md): every document in
 ## Outside the repo (private)
 
 - Project files: Google Drive, "[Project name]" folder
-- Project entry: Notion, Life Hub Projects, "[Project name]"
+- Project entry: Notion, Projects, "[Project name]"
