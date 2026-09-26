@@ -46,7 +46,7 @@ Most overwhelm comes from mixing these. ([ProductPlan: Roadmap vs Backlog](https
 
 Rule: if an item has a checkbox, it does not belong on the roadmap.
 
-**Above all three: the big question.** The highest-level problem the whole project solves, at the top of the project's Dashboard (its hub page), right under the one-line summary. It's the first thing anyone sees, and it isn't repeated anywhere else.
+**Above all three: the big question.** The highest-level problem the whole project solves, at the top of the project's Dashboard (its hub page), right under the one-line summary. It's the first thing anyone sees, and it isn't repeated anywhere else. No heading or intro line above it; the three labels say what it is.
 - **Hypothesis:** one sentence. Who would like what, and why. Name every audience (for example, students and their parents). Only include what the product actually does or will do soon; future ideas go to the backlog.
 - **Problem to solve:** one sentence.
 - **What does success look like?** One sentence with a measurable result.
