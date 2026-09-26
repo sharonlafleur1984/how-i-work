@@ -17,7 +17,7 @@ I'm Sharon LaFleur, a product designer with about 8 years of experience. This is
 
 ## The skills
 
-Each skill runs in Claude by typing its name, like `/content-writer`. These are read-only copies of the working versions in my Claude account, updated whenever a skill changes. Each one reviews itself after use and suggests improvements for me to approve, and its change log shows how it has grown.
+These are read-only copies of the working versions in my Claude account, updated whenever a skill changes. Each one reviews itself after use and suggests improvements for me to approve, and its change log shows how it has grown.
 
 - **[`/product-project-manager`](skills/product-project-manager/SKILL.md):** plans problem-first. A roadmap you can read in 3 seconds, a researched backlog, milestones, risks and decisions. Based on Marty Cagan's *Inspired*.
 - **[`/product-designer`](skills/product-designer/SKILL.md):** designs and reviews screens and pages. My design principles, UX laws, heuristics, information architecture, WCAG 2.2, and AI and agentic design. Gates what enters the component library.
