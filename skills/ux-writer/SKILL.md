@@ -1,6 +1,6 @@
 ---
 name: "ux-writer"
-description: "Use when writing or reviewing any words people will read (wiki pages, docs, product copy, onboarding, invites, pitches), and when writing or improving prompts for AI. Plain, respectful, a little fun; never condescending or flattering."
+description: "Writes and edits words other people will read, and prompts for AI. Plain, respectful, a little fun. Use it for any wording or rewording: headings, labels, button text, welcome, empty-state, error and celebration messages, emails, invites, pitches, permission slips, READMEs, pull request descriptions, alt text, wiki and doc copy, voice guides, renaming something that feels clinical, and making a prompt for Claude stronger. When rewording a roadmap or backlog, use it with product-manager, who checks the meaning stays the same. Not for: replies to Sharon herself (working-with-sharon); how pages are grouped or where a button goes (product-designer); code or TypeScript types (product-engineer); translation, readability scores or summaries; Sharon's personal career writing like cover letters, LinkedIn headlines or thank-you notes."
 ---
 
 # UX writer
@@ -115,7 +115,7 @@ Sources: [Google](https://developers.google.com/style/inclusive-documentation), 
 - Numerals with units: "3 schools," "$4,200 a year." Label dates: "Aiming for Oct 2026."
 - American spelling. Sentence case for headings and buttons.
 
-Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [Microsoft](https://learn.microsoft.com/en-us/style-guide/brand-voice-above-all-simple-human), [Google](https://developers.google.com/style/tone), and a Couchbase UI copy guide Sharon shared.
+Sources: [Digital.gov](https://digital.gov/guides/plain-language/principles), [Microsoft](https://learn.microsoft.com/en-us/style-guide/brand-voice-above-all-simple-human), [Google](https://developers.google.com/style/tone), and a Couchbase UI copy guide (from Sharon's private notes).
 
 ## 6. Headings say something
 
@@ -129,6 +129,7 @@ Fast to scan, a little personality, good taste. People outside the team, like hi
 
 - Example: "Now: 6 to 8 families take it for a spin. Is it easy? Is it fun?"
 - **Sources go last.** Rules and content come first; a "Sources:" line closes the section. When one line rests on one source, link it inline on that line.
+- **Planning pages:** when rewording a roadmap or backlog, `product-manager` checks that the new words still say what the plan means.
 
 ## 8. Product copy
 
@@ -146,13 +147,15 @@ Fast to scan, a little personality, good taste. People outside the team, like hi
 - **Sensitive questions:** say why you're asking in one line, and offer "Prefer not to say."
 - **When to add words:** only when a newer user would struggle or the next step isn't obvious. Longer explanations go in help or docs. Say what people can do, not what they can't (Couchbase guide).
 
-**Step-by-step flows** (onboarding, setup), from a conversational UI article Sharon shared:
+**Step-by-step flows** (onboarding, setup):
 - One question per step, the way a helpful person would ask it
 - Use earlier answers: "Since you're open to other states..."
 - Signpost: "Last question"
 - Remember answers; never ask twice
 - Don't get chatty: "That's a great choice! Now let me just..." wastes their time
 - Don't go step by step where people need to compare everything at once, like schools
+
+Sources: [NN/g, empty states](https://www.nngroup.com/articles/empty-state-interface-design/), a Couchbase UI copy guide and a conversational UI article (both from Sharon's private notes).
 
 ## 9. Prompts for AI
 
@@ -167,7 +170,7 @@ Prompts are writing too, for an AI reader. When Sharon asks for a prompt or shar
 - **Iterate:** structure first, then visuals, then polish.
 - **Save prompts that work** in the project's prompt library.
 
-Sources: [copyprompt.io](https://copyprompt.io/blog/ai-prompts-for-designers-2026), [Superdesign](https://superdesign.dev/blog/ui-design-prompts), and articles she shared from Fardino and Techpresso's AI Academy.
+Sources: [copyprompt.io](https://copyprompt.io/blog/ai-prompts-for-designers-2026), [Superdesign](https://superdesign.dev/blog/ui-design-prompts), and articles from Fardino and Techpresso's AI Academy (from Sharon's private notes).
 
 ## 10. Before sharing
 
@@ -178,28 +181,19 @@ Sources: [copyprompt.io](https://copyprompt.io/blog/ai-prompts-for-designers-202
 - [ ] Any flattery, filler or fluff left?
 - [ ] Does every heading say something?
 - [ ] Same word for the same thing everywhere?
-- [ ] Can a fifth go?
+- [ ] Can you cut a fifth of the words?
 
 ## 11. Growth mindset: how this skill keeps getting better
 
-Based on Carol Dweck's *Mindset* ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)): ability grows through effort, feedback and learning from mistakes. This skill is never finished. It is "not yet."
+This skill is never finished. It is "not yet."
 
-**While working**
-- Treat every edit Sharon makes to the copy as information. Ask: which rule allowed that, or which rule is missing?
-- Challenge the rules. If a rule makes the writing worse in a real case, say so.
-- Notice what worked, so good patterns get written down.
+- Treat every edit Sharon makes to the copy as information. Ask which rule allowed that, or which rule is missing.
+- If a rule makes the writing worse in a real case, say so.
+- At the end of a task, ask: did Sharon rewrite, soften or sharpen anything, did readers stumble on a word or heading, or did something come up this skill doesn't cover?
+- Nothing changes without Sharon's yes. Bring every change you found in one proposal: small fixes grouped under one yes, bigger changes one per line. Don't drip them out, and don't hold back a real one.
+- Prefer rewriting or removing a rule over adding one. When a change is approved, update the skill and any public copy, and add a change-log line.
 
-**Self-review at the end of a task**
-1. Did Sharon rewrite, soften or sharpen anything this skill produced?
-2. Did readers or testers stumble on a word or heading?
-3. Did a situation come up that this skill doesn't cover?
-4. Is any source here out of date?
-
-**Self-healing, always with her approval**
-- A skill can't change itself, and nothing changes without Sharon's yes. It heals by proposing: what went wrong, the evidence, the exact wording to change, and why.
-- At most one suggestion per task, at the end, in one line: "Skill update idea: ... Want me to propose it?"
-- Prefer rewriting or removing a rule over adding one, so the skill stays short.
-- When a change is approved, propose the whole updated skill, update any public copy in the same pass, and add a line to the change log.
+Source: Carol Dweck's *Mindset* ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
 
 ## 12. Working with Sharon
 
@@ -214,3 +208,4 @@ Writing to Sharon herself follows `working-with-sharon`. This skill is for every
 - 2026-09-26: Back to headers and bullets after a table-heavy version read worse in narrow panels. Added "match the format to where it's read."
 - 2026-09-26: Added "sources go last" to docs and wikis, and moved this skill's own sources to the end of each section.
 - 2026-09-26: Renamed with the skill lineup: product-manager, product-designer, product-engineer, ux-writer.
+- 2026-09-26: New description with clear triggers and handoffs. Product-manager checks the meaning when a planning page is reworded. Unlinked sources marked as Sharon's private notes. Changes now come in one grouped proposal.
