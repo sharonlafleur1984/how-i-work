@@ -13,6 +13,8 @@ Start here. This file tells Claude (and any developer) where everything lives, s
 - **Every fact needs a source link,** or a label saying it's an estimate.
 - **Ask before changing or deleting anything.** A recommendation is not approval.
 - **Wiki pages are edited in `docs/wiki/`,** never in the GitHub Wiki tab.
+- **Every commit names its Claude session.** End each commit message with `Claude-Session:` and the link to the session that made it, so any branch can be traced back to where the work happened.
+- **Finish with a pull request.** Pushed work always gets one, even when it's small. A branch with no pull request looks abandoned.
 
 ## Where everything is
 
