@@ -1,6 +1,6 @@
 # How I work
 
-**Last updated:** September 26, 2026
+**Last updated:** October 5, 2026
 
 I'm Sharon LaFleur, a product designer with about 8 years of experience. This is how I design and build products with AI: the process I follow, the Claude skills that guide the work, and the templates every project starts from.
 
@@ -27,6 +27,7 @@ These are read-only copies of the working versions in my Claude account, updated
 ## Projects that use this
 
 - **[After Graduation](https://github.com/sharonlafleur1984/after-graduation):** a planner that helps high school students and their parents or guardians map out life after graduation. [Wiki](https://github.com/sharonlafleur1984/after-graduation/wiki)
+- **[Life Hub](https://github.com/sharonlafleur1984/life-hub):** a household operating system run by Claude, with one house manager and eight life-area specialists. [Wiki](https://github.com/sharonlafleur1984/life-hub/wiki)
 
 ## Get in touch
 

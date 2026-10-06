@@ -1,6 +1,6 @@
 # The process
 
-**Last updated:** September 26, 2026
+**Last updated:** October 5, 2026
 
 How a project goes from a problem to shipped work. AI drafts; I decide. Nothing changes without my yes.
 
@@ -53,4 +53,6 @@ These apply at every step.
 - **Every change is a pull request.** Code, docs and the wiki all change through pull requests I review and merge. Wiki pages live in the repo and publish on merge ([template](templates/publish-wiki.yml)).
 - **Decisions get logged:** who decided, why, and what else was considered.
 - **Everything stays findable.** Each project has one Documents page listing every document and when to open it ([template](templates/Documents.md)). Private files stay private, never in a public repo.
+- **Share what we learn.** When we figure something out, ask one question: would this help every project? If yes, it goes here in how-i-work, on the page it belongs to. If it only matters to one project, it stays in that project. Projects link here instead of copying.
+- **Projects stay in step with the templates.** When a project's CLAUDE.md changes, compare it to [the template](templates/CLAUDE.md) and bring over anything it's missing. That's how one project lost track of where its files live.
 - **The skills keep getting better.** Each one reviews itself after a task and proposes one change for me to approve. Its change log shows what changed and why.
