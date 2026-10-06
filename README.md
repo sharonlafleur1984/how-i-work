@@ -1,6 +1,6 @@
 # How I work
 
-**Last updated:** October 5, 2026
+**Last updated:** October 6, 2026
 
 I'm Sharon LaFleur, a product designer with about 8 years of experience. This is how I design and build products with AI: the process I follow, the Claude skills that guide the work, and the templates every project starts from.
 
@@ -23,6 +23,8 @@ These are read-only copies of the working versions in my Claude account, updated
 - **[`/product-designer`](skills/product-designer/SKILL.md):** designs and reviews screens and pages. My design principles, UX laws, heuristics, information architecture, WCAG 2.2, and AI and agentic design. Gates what enters the component library.
 - **[`/ux-writer`](skills/ux-writer/SKILL.md):** writes every word people read. Show first, as few words as clarity allows, respectful and a little fun. Also helps write better AI prompts.
 - **[`/product-engineer`](skills/product-engineer/SKILL.md):** turns a prototype built with AI into a real, tested product, front end and back end, with design tokens and Storybook.
+- **[`/spec-writer`](skills/spec-writer/SKILL.md):** writes specs that every reader can check. The product manager, designer and engineer write it together, each arguing for a different risk, and every spec uses the same sections.
+- **[`/working-with-sharon`](skills/working-with-sharon/SKILL.md):** how Claude writes and paces every reply to me. The answer first, one question at a time, and no more choices than I can weigh at once.
 
 ## Projects that use this
 
