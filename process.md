@@ -5,54 +5,89 @@
 How a project goes from a problem to shipped work. AI drafts; I decide. Nothing changes without my yes.
 
 ```mermaid
-flowchart TD
+flowchart LR
   A[Problem] --> B[Roadmap] --> C[Research] --> D[Test] --> E{Build?}
-  E -- Yes --> F[Build] --> G[Learn]
+  E -- Yes --> F[Learn]
   E -- No --> A
 ```
 
 ## The flow
 
-### 1. Problem: name it first
+### 1. Identify the Problem
 
-Every roadmap item, idea and task names the problem it solves and what success looks like. If the problem can't be named, it isn't ready. Success means the problem got solved, not that something shipped on time.
+For each roadmap item, idea, and/or task, identify the problem it solves and what success looks like. If a problem can't be identified, hold off on designing a solution. Success can only be claimed when a problem is resolved, not when a product ships.
 
-### 2. Roadmap: pick what to solve
+### 2. What is the Roadmap? What should it include?
 
-Now, Next, Later: the problems being solved and the milestones that show they're solved, readable in 3 seconds.
+After a problem has been clearly identified, assign the milestones that indicate progress. Limit milestones to three max.
 
-Ideas that aren't on the roadmap wait in the backlog. They move from Idea → Researched → my decision → Decided, and only a decided idea joins the roadmap. Many never do, and that's fine.
+- Ideation that isn't on the roadmap is documented and stored in the backlog. 
+- A problem can move from Idea → Researched → My Decision → Decided
+- Only when an idea reaches "Decided" can it be added to the roadmap.
 
-### 3. Research: check before building
+### 3. Research: The value of research/competitive analysis
 
-- Competitor features get one test: what problem does it solve, and is there a better or more current way? Copy only when there isn't.
-- Small, easy-to-undo choices need a sourced principle. Big bets need evidence from real people.
-- Every fact gets a source link, or a label saying it's an estimate.
+- When doing a competitive analysis, the biggest value a competitor feature provides is insight: What problem were they hoping to solve, and is there a better or more current/agentic solution? Use competitor solutions in your ideation ONLY when it is truly the best solution to solve the problem they were trying to solve. 
+- All research needs a source. No exception. When you provide information, make sure I can read the source material. Every fact you give me should also come with a source link. If you estimate a detail or fact, label it with an "Estimate" tag.
 
-### 4. Test: small and cheap
+### 4. Research: User Testing
 
-Usability sessions and small tests with real people, before the big build.
+Multiple small sessions with real people, recorded and documented, beat out a large one-time study at the end of a project every time. 
 
-### 5. Build? Let the results decide
+User tests results provide valuable insight. When they offer suggestions or provide a wishlist, remember the user does not know what the user does not know. Their solution might not be the best. Instead, use that information to help determine what problem they were hoping to solve. And is there a better or more current/agentic solution? Consider a user's suggestion for improvement ONLY when it is truly the best solution to solve that problem.
 
-The test results decide: build one route, or stop and rethink the problem. Stopping early is a win; it saves the months a wrong build would cost.
+### 5. What is the Roadmap? What should it include?
 
-### 6. Build: in small tasks
+After a problem has been clearly identified, assign it to the Roadmap, and clearly identify what success looks like. Assign milestones (if needed) to indicate progress toward the solution if there are multiple jobs to be done.
 
-Each roadmap problem breaks into tasks in GitHub Issues. Every task states its problem and "done when." Big work becomes a parent issue with sub-issues, in the order they depend on each other.
+- Limit milestones to three max.
+- Ideation that isn't on the roadmap is documented and stored in the backlog. 
+- A problem can move from Idea → Researched → My Decision → Decided
+- Only when an idea reaches "Decided" can it be added to the roadmap.
+- Each roadmap problem becomes a task and is listed on the GitHub Issues tab.
+- Every task clearly states the "Problem to solve" and "What Success Looks Like." Big work becomes a parent issue with sub-issues, in the order they depend on each other.
 
-### 7. Learn: improve and repeat
+### 6. Growth Mindset
 
-Track what people actually do, fix what gets in their way, and feed new problems back to step 1.
+This process should always be seen through the lens of growth mindset. It is a living and breathing document. Consider it a source of truth, but be open to suggesting your own opinions to improve the process along the way. 
 
-## Along the way
+## My Learnings
+For the best results, use these learnings to help inform your decisions and provide feedback
 
-These apply at every step.
+**Skills I have written and customized:**
+- [/product-manager](skills/product-manager/SKILL.md) for planning
+- [/product-designer](skills/product-designer/SKILL.md) for page layout and information architecture
+- [/ux-writer](skills/ux-writer/SKILL.md) for writing copy
+- [/product-engineer](skills/product-engineer/SKILL.md) for software architecture and writing/maintaining code
 
-- **Skills do the craft:** [/product-manager](skills/product-manager/SKILL.md) for planning, [/product-designer](skills/product-designer/SKILL.md) for structure and screens, [/ux-writer](skills/ux-writer/SKILL.md) for every word, and [/product-engineer](skills/product-engineer/SKILL.md) for the code.
-- **Every change is a pull request.** Code, docs and the wiki all change through pull requests I review and merge. Wiki pages live in the repo and publish on merge ([template](templates/publish-wiki.yml)).
-- **Decisions get logged:** who decided, why, and what else was considered.
-- **Everything stays findable.** Each project has one Documents page listing every document and when to open it ([template](templates/Documents.md)). Private files stay private, never in a public repo.
-- **Share what we learn.** When we figure something out, ask one question: would this help every project? If yes, it goes here in how-i-work, on the page it belongs to. If it only matters to one project, it stays in that project. Projects link here instead of copying.
-- **Projects stay in step with the templates.** When a project's CLAUDE.md changes, compare it to [the template](templates/CLAUDE.md) and bring over anything it's missing. That's how one project lost track of where its files live.
-- **The skills keep getting better.** Each one reviews itself after a task and proposes one change for me to approve. Its change log shows what changed and why.
+**The skills keep getting better.** 
+
+- Each skill reviews itself after a task and proposes any changes to improve my skills, to help me improve my skill creation development, and help me to grow as a designer. Its change log shows what changed and why.
+
+**Each change triggers a pull request.** 
+- Code, docs, and the wiki all change through pull requests I review and merge. Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
+- The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged
+- ([template](templates/publish-wiki.yml)).
+  
+**Decisions are always logged and findable:**
+
+- Who decided, what they decided, why they decided it, when they decided it, and
+- Was anything else considered? If so, what?/why was it disregarded?
+  
+**Documents are easy to find.** 
+
+- Each project has one Documents page that acts as an index, listing every document associated with that project, and a link to where it is hosted
+- ([template](templates/Documents.md)).
+- Private files stay private. Never store personal PPI or PHI in a public repo
+
+**Share what we learn.** 
+
+- When we learn something new, ask: would this help every project?
+- If yes, it goes here in how-i-work.
+- If a learning only matters to one project, it stays in that project.
+- Stay true to my single source of truth philosphy, Documents remain where they were created and are NOT COPIED.
+- To avoid muddying the data. Provide a link to the original and show a view only solution.
+
+**Projects stay in step with the templates.** 
+
+- When a project's CLAUDE.md changes, make sure you are updating [the template](templates/CLAUDE.md) as well.
