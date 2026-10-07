@@ -2,9 +2,9 @@
 
 **Last updated:** October 6, 2026
 
-I'm Sharon LaFleur, a product designer with about 8 years of experience. 
+- I'm Sharon LaFleur, a product designer with about 8 years of experience. 
 
-This is how I design and build products with AI
+- This is how I design and build products with AI
 
 **My design philosophy:**
 - Keep it as simple as possible.
