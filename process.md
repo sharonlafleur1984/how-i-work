@@ -1,8 +1,8 @@
-# The process
+# The Process
 
 **Last updated:** October 5, 2026
 
-How a project goes from a problem to shipped work. AI drafts; I decide. Nothing changes without my yes.
+How a project goes from a problem to shipped work.
 
 ```mermaid
 flowchart LR
@@ -15,30 +15,24 @@ flowchart LR
 
 ### 1. Identify the Problem
 
-For each roadmap item, idea, and/or task, identify the problem it solves and what success looks like. If a problem can't be identified, hold off on designing a solution. Success can only be claimed when a problem is resolved, not when a product ships.
+- For each roadmap item, idea, and/or task, identify the problem it solves and what success looks like. If a problem can't be identified, hold off on designing a solution. Success can only be claimed when a problem is resolved, not when a product ships.
 
-### 2. What is the Roadmap? What should it include?
-
-After a problem has been clearly identified, assign the milestones that indicate progress. Limit milestones to three max.
-
-- Ideation that isn't on the roadmap is documented and stored in the backlog. 
-- A problem can move from Idea → Researched → My Decision → Decided
-- Only when an idea reaches "Decided" can it be added to the roadmap.
-
-### 3. Research: The value of research/competitive analysis
+### 2. Research: The value of research/competitive analysis
 
 - When doing a competitive analysis, the biggest value a competitor feature provides is insight: What problem were they hoping to solve, and is there a better or more current/agentic solution? Use competitor solutions in your ideation ONLY when it is truly the best solution to solve the problem they were trying to solve. 
 - All research needs a source. No exception. When you provide information, make sure I can read the source material. Every fact you give me should also come with a source link. If you estimate a detail or fact, label it with an "Estimate" tag.
 
-### 4. Research: User Testing
+### 3. Research: User Testing
 
-Multiple small sessions with real people, recorded and documented, beat out a large one-time study at the end of a project every time. 
+- Multiple small sessions with real people, recorded and documented, beat out a large one-time study at the end of a project every time. 
+- User tests results provide valuable insight.
+- When a user offers suggestions or provides a wishlist, remember the user does not know what the user does not know. Their solution might not be the best.
+- Instead, use that information to help determine what problem they were hoping to solve. And is there a better or more current/agentic solution?
+- Consider a user's suggestion for improvement ONLY when it is truly the best solution to solve that problem.
 
-User tests results provide valuable insight. When they offer suggestions or provide a wishlist, remember the user does not know what the user does not know. Their solution might not be the best. Instead, use that information to help determine what problem they were hoping to solve. And is there a better or more current/agentic solution? Consider a user's suggestion for improvement ONLY when it is truly the best solution to solve that problem.
+### 4. What is the Roadmap? What should it include?
 
-### 5. What is the Roadmap? What should it include?
-
-After a problem has been clearly identified, assign it to the Roadmap, and clearly identify what success looks like. Assign milestones (if needed) to indicate progress toward the solution if there are multiple jobs to be done.
+- After a problem has been clearly identified, assign it to the Roadmap, and clearly identify what success looks like. Assign milestones (if needed) to indicate progress toward the solution if there are multiple jobs to be done.
 
 - Limit milestones to three max.
 - Ideation that isn't on the roadmap is documented and stored in the backlog. 
@@ -47,9 +41,10 @@ After a problem has been clearly identified, assign it to the Roadmap, and clear
 - Each roadmap problem becomes a task and is listed on the GitHub Issues tab.
 - Every task clearly states the "Problem to solve" and "What Success Looks Like." Big work becomes a parent issue with sub-issues, in the order they depend on each other.
 
-### 6. Growth Mindset
+### 5. Growth Mindset
 
-This process should always be seen through the lens of growth mindset. It is a living and breathing document. Consider it a source of truth, but be open to suggesting your own opinions to improve the process along the way. 
+- This process should always be seen through the lens of growth mindset. It is a living and breathing document. Consider it a source of truth, but be open to suggesting your own opinions to improve the process along the way. 
+
 
 ## My Learnings
 For the best results, use these learnings to help inform your decisions and provide feedback
