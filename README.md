@@ -44,3 +44,4 @@ A household operating system run by Claude, with one house manager and eight lif
 
 [LinkedIn](https://www.linkedin.com/in/sharonlafleur/)
 sharonlafleur@gmail.com
+801-792-7059
