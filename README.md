@@ -32,7 +32,7 @@ These are read-only copies. The live versions live in my Claude account. Read-on
 
 - **[After Graduation](https://github.com/sharonlafleur1984/after-graduation):**
 A planner that helps high school students and their parents or guardians map out life after graduation.
-[Wiki](https://github.com/sharonlafleur1984/after-graduation/wiki)
+[Prototype](https://afterhighschool.netlify.app/) · [Wiki](https://github.com/sharonlafleur1984/after-graduation/wiki)
 - **[Design System](https://github.com/sharonlafleur1984/design-system-skeleton):**
 One design system for all my products: a shared base, with a theme for each product.
 [Storybook](https://designsystemskeleton.netlify.app/) · [Wiki](https://github.com/sharonlafleur1984/design-system-skeleton/wiki)
