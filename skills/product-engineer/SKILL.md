@@ -5,20 +5,27 @@ description: "Builds and fixes code, front end and back end, as clean, accessibl
 
 # Product engineer
 
-The starting point is usually a prototype built through prompts (a Claude artifact or a single HTML file). The goal is to move it into a real GitHub repo Sharon can open, read, change, and store, then grow it into a codebase anyone can pick up: every file easy to find, every decision written down, every screen accessible, tests that keep it healthy over time, and design and code that stay in sync.
+The starting point is usually a prototype built through prompts (a Claude artifact or a single HTML file). The goal is to move it into a real GitHub repo Sharon can open, read, change, and store. Then grow it into a codebase anyone can pick up, with:
+- every file simple to find
+- every decision written down
+- every screen accessible
+- tests that keep it healthy over time
+- design and code that stay in sync
 
-## When to use it
+## When to use this skill
 
-**Use it for:**
+### Use this skill for
+
 - Moving a prototype (a Claude artifact or a single HTML file) into a repo, and rebuilding it in React, TypeScript and Storybook
 - Supabase accounts and data
-- Failing builds, CI or lint errors
+- Failing builds, CI (continuous integration) or lint errors
 - Design tokens and syncing them with Figma variables
 - Playwright and accessibility tests, keyboard and focus bugs, and refactoring components
 - Analytics like PostHog
 - Charts with Chart.js, once `product-designer` has designed them
 
-**Not for:**
+### Don't use this skill for
+
 - What screens should look like or which chart type to use (`product-designer`)
 - Error messages, pull request descriptions or other wording (`ux-writer`)
 - Whether or when to build something, or its risks (`product-manager`)
@@ -28,36 +35,51 @@ The starting point is usually a prototype built through prompts (a Claude artifa
 
 Tests and checks exist to protect the product, not to create work. A change that protects nothing is clutter, however tidy it looks.
 
-- **Name what it protects.** Before adding a check, dependency, file or doc, say in one line what it guards against. If the answer is "nothing yet," don't add it; note it as an idea for when it will matter.
-- **Edit or delete before adding.** Fix the rule, file or component that already exists first. Leave the semantic layer (the domain package: its names, types and schemas) and the docs cleaner than you found them, and when a change touches a domain concept, update both together.
-- **Big version jumps only for a reason.** Upgrade a major version when it fixes a security problem, unblocks real work, or the old version is losing support. Never just because a newer one exists.
-- **When a check fails, ask why before fixing.** If the fix is "add something so the check passes," first ask whether the check protects anything here. Never loosen a rule quietly; say so in the pull request.
+### Name what a change protects
+
+Before adding a check, dependency, file or doc, say in one line what it guards against. If the answer is "nothing yet," don't add it. Note it as an idea for when it will matter.
+
+### Edit or delete before adding
+
+Fix the rule, file or component that already exists first. Leave the semantic layer (the domain package, with its names, types and schemas) and the docs cleaner than you found them. When a change touches a domain concept, update the semantic layer and the docs together.
+
+### Make big version jumps only for a reason
+
+Upgrade a major version when it fixes a security problem, unblocks real work, or the old version is losing support. A newer version existing is never reason enough.
+
+### When a check fails, ask why before fixing
+
+If the fix is "add something so the check passes," first ask whether the check protects anything here. Never loosen a rule quietly. Say so in the pull request.
 
 ## Start from the prototype
 
 1. Bring the prototype into the repo exactly as it works today, on its own branch, so there is a known-good version to compare against.
-2. Swap any real personal data for sample data before the first commit. Turn off any live backend keys in the copy.
-3. Write a short README that says what it is and that the rebuild is coming.
-4. Treat the prototype as the spec: every screen, state, and behavior in it becomes a checklist item for the rebuild.
-5. Rebuild piece by piece using the order of work below.
+2. Swap any real personal data for sample data before the first commit.
+3. Turn off any live backend keys in the copy.
+4. Write a short README that says what it is and that the rebuild is coming.
+5. Treat the prototype as the spec. Every screen, state, and behavior in it becomes a checklist item for the rebuild.
+6. Rebuild piece by piece, using the order of work in section 1.
 
 ### Match the prototype before replacing it
 
 - Before rebuilding, capture Playwright screenshots of every prototype screen and open state (modals, flipped cards, expanded sections) at phone and desktop sizes. Store them in `tests/visual/prototype/`.
-- Keep a parity checklist in `docs/prototype-parity.md`: one row per screen, state, and behavior, with a status (not started, rebuilt, matches).
+- Keep a parity checklist in `docs/prototype-parity.md`, with one row per screen, state, and behavior. Each row has a status (not started, rebuilt, matches).
 - A rebuilt screen is done only when it matches its screenshot (or the difference is an intentional, documented improvement) and its behaviors pass tests.
 - Never delete the prototype until every row matches.
 
 ## 0. Before writing code
 
-1. Read the repo's `CLAUDE.md`, `docs/ARCHITECTURE.md`, and `docs/design-system.md`. Follow recorded decisions; do not re-decide them.
+1. Read the repo's `CLAUDE.md`, `docs/ARCHITECTURE.md`, and `docs/design-system.md`. Follow recorded decisions, and don't re-decide them.
 2. If a decision is missing (framework, audience, hosting), stop and ask Sharon one question at a time, with a recommendation.
-3. Write a short plan: what changes, which files, which tests prove it. Show it before large changes.
-4. Never commit real personal data. Use sample data only. Secrets live in `.env` (git-ignored) and CI secrets.
+3. Write a short plan covering what changes, which files, and which tests prove it.
+4. Show the plan before large changes.
+5. Never commit real personal data. Use sample data only. Secrets live in `.env` (git-ignored) and CI secrets.
 
-## 1. Order of work (each step depends on the one before)
+## 1. Order of work
 
-1. Tooling and QA skeleton (so every later step is tested from day one), plus prototype screenshots
+Each step depends on the one before.
+
+1. Tooling and QA (quality assurance) skeleton (so every later step is tested from day one), plus prototype screenshots
 2. Design tokens, synced with Figma variables if Sharon uses Figma
 3. Base styles and layout primitives
 4. Components, bottom level first (see section 6), each with tests, docs, and a Storybook page
@@ -108,38 +130,75 @@ Tests and checks exist to protect the product, not to create work. A change that
 └─ README.md
 ```
 
-Naming: kebab-case files, one component per folder, feature folders named by what the user does.
+Name files in kebab-case, keep one component per folder, and name feature folders by what the user does.
 
 ## 3. Semantic HTML rules
 
-- One `<h1>` per page; headings never skip levels; headings describe content, not styling.
-- Landmarks: `<header>`, `<nav>`, `<main>`, `<footer>`, `<section aria-labelledby>` for titled regions.
-- Native elements first: `<button>` for actions, `<a href>` for navigation, `<dialog>` for modals, `<details>` for simple disclosure, `<fieldset>`/`<legend>` for grouped choices, `<input type="checkbox">` for checklists, `<table>` with `<th scope>` for comparisons, `<ol>`/`<ul>` for lists, `<time datetime>` for dates.
-- Never make a `<div>` clickable. Never nest interactive elements.
-- ARIA only when no native element exists; every ARIA pattern follows the APG ([the W3C ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)), for example radio group, tabs, disclosure.
-- Every image has meaningful `alt`, or `alt=""`/`aria-hidden` when decorative. Information is never in an image alone.
-- Forms: visible labels, helpful errors tied with `aria-describedby`.
+### Headings and landmarks
+
+- One `<h1>` per page.
+- Headings never skip levels.
+- Headings describe content, not styling.
+- Use the landmarks `<header>`, `<nav>`, `<main>` and `<footer>`, plus `<section aria-labelledby>` for titled regions.
+
+### Native elements first
+
+Use the native element for each job before anything else.
+
+| Job | Native element |
+|---|---|
+| Actions | `<button>` |
+| Navigation | `<a href>` |
+| Modals | `<dialog>` |
+| Simple disclosure | `<details>` |
+| Grouped choices | `<fieldset>` and `<legend>` |
+| Checklists | `<input type="checkbox">` |
+| Comparisons | `<table>` with `<th scope>` |
+| Lists | `<ol>` or `<ul>` |
+| Dates | `<time datetime>` |
+
+- Never make a `<div>` clickable.
+- Never nest interactive elements.
+
+### ARIA, images and forms
+
+- Use ARIA only when no native element exists.
+- Every ARIA pattern follows the APG ([the W3C ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)), for example radio group, tabs, disclosure.
+- Every image has meaningful `alt`. A decorative image gets `alt=""` or `aria-hidden`.
+- Information is never in an image alone.
+- Forms have visible labels.
+- Form errors are helpful and tied with `aria-describedby`.
 
 ## 4. CSS architecture
 
-- Cascade layers in this order: `@layer reset, tokens, base, layout, components, utilities, overrides;`
-- No `!important` outside `overrides` (goal: zero). No ID selectors. Low, flat specificity.
+- Order the cascade layers as `@layer reset, tokens, base, layout, components, utilities, overrides;`
+- No `!important` outside `overrides`. The goal is zero.
+- No ID selectors.
+- Keep specificity low and flat.
 - Components only use semantic or component tokens, never raw values or primitives.
-- Logical properties (`margin-block`, `padding-inline`), `clamp()` type scale, container queries for components, media queries only for page layout.
+- Use logical properties (`margin-block`, `padding-inline`).
+- Use a `clamp()` type scale.
+- Use container queries for components, and media queries only for page layout.
 - Every animation is disabled or reduced under `prefers-reduced-motion`.
-- Focus is always visible (`:focus-visible`), 3:1 minimum contrast.
+- Focus is always visible (`:focus-visible`), with 3:1 minimum contrast.
 
 ## 5. Design tokens (three tiers, DTCG format)
 
-1. **Primitives:** raw values named by what they are (`color.red.600`, `space.8`). Never used by components.
-2. **Semantic:** named by purpose (`color.text.primary`, `color.status.alert`, `space.section`). Components use these.
-3. **Component:** only when 3+ components share a decision that may change independently (`button.primary.bg`).
+1. **Primitives** are raw values named by what they are (`color.red.600`, `space.8`). Components never use them.
+2. **Semantic** tokens are named by purpose (`color.text.primary`, `color.status.alert`, `space.section`). Components use these.
+3. **Component** tokens exist only when 3+ components share a decision that may change independently (`button.primary.bg`).
 
-Rules: names read category, property, variant, state (`color.bg.surface.hover`). Never encode a value in a name. Build tokens to CSS custom properties (and Figma variables when Sharon uses Figma) with Style Dictionary or an equivalent. Tokens are the single source of truth; a lint rule fails any raw hex, px spacing, or font size in component CSS.
+### Token rules
+
+- Names read category, property, variant, state (`color.bg.surface.hover`).
+- Never encode a value in a name.
+- Build tokens to CSS custom properties (and Figma variables when Sharon uses Figma) with Style Dictionary or an equivalent.
+- Tokens are the single source of truth.
+- A lint rule fails any raw hex, px spacing, or font size in component CSS.
 
 ## 6. Components, nesting, and patterns
 
-Five levels. Each level may use only the levels below it, never above or sideways into a feature.
+There are five levels. Each level may use only the levels below it, never above or sideways into a feature.
 
 | Level | What it is | Examples | Lives in |
 |---|---|---|---|
@@ -149,34 +208,87 @@ Five levels. Each level may use only the levels below it, never above or sideway
 | 4. Patterns | Reusable combinations with rules for when and how to use them | modal footer with navigation + rank picker, flip-card deck, filter bar, empty state | `src/patterns/` |
 | 5. Features and pages | Real screens and user flows | explore schools, financial planning, important dates | `src/features/` |
 
-Nesting rules:
-- Nested parts live in their parent's folder and are exported with it (`Card`, `CardHeader`, `CardFooter`). They are never imported alone from outside the parent.
-- Prefer composition (children and named slots) over long prop lists. If a component needs more than about 8 props, split it or turn it into a composite.
-- A component promotes up a level only when it is reused in 3 or more places. Do not build a pattern for a one-off.
-- Features own data and state; components, composites, and patterns receive data through props and stay pure.
-- Charts use [Chart.js](https://www.chartjs.org/) (through [react-chartjs-2](https://react-chartjs-2.js.org/) in React), with colors from design tokens and animation off when reduced motion is on. Chart.js draws on a canvas that screen readers can't read, so every chart gets a text label and a fallback description or data table ([Chart.js accessibility](https://www.chartjs.org/docs/latest/general/accessibility.html)). The product-designer skill decides what a chart should show. Build a chart only from a design product-designer has already tried in the UI.
+### Nesting rules
 
-Every item at levels 2 to 4 ships with: markup, styles, behavior, tests, an a11y note, a Storybook page, and a docs page listing variants, states (default, hover, focus, active, disabled, loading, empty, error), and do/don't examples. Pattern pages also say when to use it, when not to, and which components it is built from. Storybook is grouped by level (Tokens, Components, Composites, Patterns, Pages) so the hierarchy is visible.
+- Nested parts live in their parent's folder and are exported with it (`Card`, `CardHeader`, `CardFooter`).
+- Nested parts are never imported alone from outside the parent.
+- Prefer composition (children and named slots) over long prop lists.
+- If a component needs more than about 8 props, split it or turn it into a composite.
+- A component promotes up a level only when it is reused in 3 or more places.
+- Don't build a pattern for a one-off.
+- Features own data and state.
+- Components, composites, and patterns receive data through props and stay pure.
+
+### Charts
+
+- Charts use [Chart.js](https://www.chartjs.org/) (through [react-chartjs-2](https://react-chartjs-2.js.org/) in React).
+- Chart colors come from design tokens.
+- Chart animation is off when reduced motion is on.
+- Every chart gets a text label and a fallback description or data table ([Chart.js accessibility](https://www.chartjs.org/docs/latest/general/accessibility.html)). Chart.js draws on a canvas that screen readers can't read.
+- The `product-designer` skill decides what a chart should show.
+- Build a chart only from a design `product-designer` has already tried in the UI.
+
+### What every component ships with
+
+Every item at levels 2 to 4 ships with markup, styles, behavior, tests, an a11y note, a Storybook page, and a docs page.
+
+- The docs page lists variants, states and do/don't examples.
+- The states are default, hover, focus, active, disabled, loading, empty and error.
+- Pattern pages also say when to use the pattern, when not to, and which components it is built from.
+- Storybook is grouped by level (Tokens, Components, Composites, Patterns, Pages), so the hierarchy is visible.
 
 ## 7. Content and state
 
-- All content lives in `src/content/` with a schema (Zod or JSON Schema). Build fails on invalid content.
-- UI state and saved user data go through one storage module in `src/lib/`; nothing else touches `localStorage` or the network directly.
+- All content lives in `src/content/` with a schema (Zod or JSON Schema).
+- Build fails on invalid content.
+- UI state and saved user data go through one storage module in `src/lib/`.
+- Nothing else touches `localStorage` or the network directly.
 - Dates are real dates (`2027-10-01`), formatted at render time.
 
 ## 8. Design and code loop
 
-When Sharon designs in Figma, connect the two sides with three links. None of them rewrites code automatically; they keep both sides visible and matched.
+When Sharon designs in Figma, connect the two sides with three links. None of them rewrites code automatically. They keep both sides visible and matched.
 
-1. **Token sync (the only link that moves changes).** Tokens in `src/tokens/` and Figma variables stay matched through Style Dictionary or a token-sync plugin. Decide and record in an ADR which side is the source of truth. A CI check fails if they drift.
-2. **Code Connect.** Map each Figma component to its code component so Figma Dev Mode shows the real code. Use Figma's template files (`*.figma.tsx`), not the retired Storybook-specific parser.
-3. **Storybook and Figma side by side.** Add the Storybook design add-on so each story shows its Figma frame, and publish Storybook so the Storybook Connect plugin can show live stories inside Figma.
+### Token sync
 
-When a design changes: update tokens first, then components, then the Storybook story, then the Code Connect template. The visual tests catch anything missed.
+Token sync is the only link that moves changes. Tokens in `src/tokens/` and Figma variables stay matched through Style Dictionary or a token-sync plugin. Decide and record in an ADR which side is the source of truth. A CI check fails if they drift.
 
-## 9. Quality pipeline (runs locally on commit and in CI on every pull request)
+### Code Connect
 
-This is the full pipeline a grown product needs, not a day-one checklist. Add each layer when there is something for it to protect: accessibility scans once there are screens, Lighthouse once there are pages people load, coverage targets once there is logic worth covering. Until then, a missing layer is a note, not a gap.
+Map each Figma component to its code component, so Figma Dev Mode shows the real code. Use Figma's template files (`*.figma.tsx`), not the retired Storybook-specific parser.
+
+### Storybook and Figma side by side
+
+Add the Storybook design add-on, so each story shows its Figma frame. Publish Storybook, so the Storybook Connect plugin can show live stories inside Figma.
+
+### When a design changes
+
+Update in this order.
+
+1. Tokens
+2. Components
+3. The Storybook story
+4. The Code Connect template
+
+The visual tests catch anything missed.
+
+## 9. Quality pipeline
+
+The pipeline runs locally on commit and in CI on every pull request.
+
+This is the full pipeline a grown product needs, not a day-one checklist. Add each layer when there is something for it to protect.
+
+| Layer | Add it once there are |
+|---|---|
+| Accessibility scans | screens |
+| Lighthouse | pages people load |
+| Coverage targets | logic worth covering |
+
+Until then, a missing layer is a note, not a gap.
+
+### Layers, tools and gates
+
+Each layer runs a tool and must pass its gate.
 
 | Layer | Tool | Gate |
 |---|---|---|
@@ -193,23 +305,31 @@ This is the full pipeline a grown product needs, not a day-one checklist. Add ea
 | Hygiene | Knip, Gitleaks, dependency audit | no unused code, secrets, or known vulnerabilities |
 | Content | schema validation | all data valid |
 
-Git hooks (Lefthook or Husky) run lint, types, and unit tests before commit. GitHub Actions runs everything. Netlify builds a preview link for every pull request, and Storybook is published so every component has a shareable link.
+### Where the pipeline runs
+
+- Git hooks (Lefthook or Husky) run lint, types, and unit tests before commit.
+- GitHub Actions runs everything.
+- Netlify builds a preview link for every pull request.
+- Storybook is published, so every component has a shareable link.
 
 ## 10. Documentation
 
-- `README.md`: what it is, a screenshot, how to run, how to test, links to docs and Storybook.
-- `docs/ARCHITECTURE.md`: folder map, the five levels, data flow, state, how to add a component or a piece of content.
-- `docs/design-system.md`: token tables, rules, component and pattern index.
-- `docs/prototype-parity.md`: what has been rebuilt from the prototype and what is left.
-- `docs/glossary.md`: plain-language definitions of every technical term used in the repo.
-- `docs/decisions/`: one short ADR per significant choice (context, decision, consequences).
-- If the repo has a GitHub wiki, keep a plain-language dashboard there with progressive disclosure that links to all of the above, Storybook, and the skills used, so Sharon can find everything without reading code.
+| File | What it holds |
+|---|---|
+| `README.md` | What it is, a screenshot, how to run, how to test, links to docs and Storybook |
+| `docs/ARCHITECTURE.md` | Folder map, the five levels, data flow, state, how to add a component or a piece of content |
+| `docs/design-system.md` | Token tables, rules, component and pattern index |
+| `docs/prototype-parity.md` | What has been rebuilt from the prototype and what is left |
+| `docs/glossary.md` | Plain-language definitions of every technical term used in the repo |
+| `docs/decisions/` | One short ADR per significant choice (context, decision, consequences) |
+
+If the repo has a GitHub wiki, keep a plain-language dashboard there with progressive disclosure. It links to every document in this table, Storybook, and the skills used, so Sharon can find everything without reading code.
 
 ## 11. Learning mode
 
 Sharon is a designer learning to work in code. The repo should teach as it grows.
 
-- Every pull request description has a short "What changed and how it works" section in plain language: what the user will notice, which files changed, and one sentence on the concept behind it.
+- Every pull request description has a short "What changed and how it works" section in plain language. It covers what the user will notice, which files changed, and one sentence on the concept behind it.
 - The first time a new term, tool, or file type appears, explain it in plain language and add it to `docs/glossary.md`.
 - Leave short comments in code only where the why is not obvious. Explain decisions, not syntax.
 - When there are two reasonable ways to do something, name both briefly and say which was chosen and why.
@@ -231,26 +351,43 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 ## 13. Working with Sharon
 
 - Writing to Sharon follows `working-with-sharon`.
-- She is a designer learning to work in code: explain each term in plain language the first time it comes up.
+- She is a designer learning to work in code. Explain each term in plain language the first time it comes up.
 
 ## 14. Growth mindset: how this skill keeps getting better
 
 This skill is never finished. It is "not yet."
 
-- Treat every correction from Sharon, failing test and review comment as information. Ask which rule allowed the problem, or which rule is missing. Say plainly when this skill's guidance led to a wrong result.
-- Tools change fast. Before leaning on a rule, check whether a tool is deprecated, a version has moved on, or a better practice now exists.
-- At the end of a task, ask: did Sharon push back, did the pipeline or a reviewer catch something this skill should have prevented, or did something come up it doesn't cover?
-- Nothing changes without Sharon's yes. Bring every change you found in one proposal: small fixes grouped under one yes, bigger changes one per line. Don't drip them out, and don't hold back a real one.
-- Prefer rewriting or removing a rule over adding one. When a change is approved, update the skill and any public copy (such as `docs/skills/` in a repo), and add a change-log line.
+### Learn from every correction
 
-Source: Carol Dweck's *Mindset* ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
+- Treat every correction from Sharon, failing test and review comment as information.
+- Ask which rule allowed the problem, or which rule is missing.
+- Say plainly when this skill's guidance led to a wrong result.
+- Tools change fast. Before leaning on a rule, check whether a tool is deprecated, a version has moved on, or a better practice now exists.
+
+At the end of a task, ask three questions.
+
+1. Did Sharon push back?
+2. Did the pipeline or a reviewer catch something this skill should have prevented?
+3. Did something come up this skill doesn't cover?
+
+### Propose changes in one batch
+
+- Nothing changes without Sharon's yes.
+- Bring every change you found in one proposal. Group small fixes under one yes, and give bigger changes one line each.
+- Don't drip changes out, and don't hold back a real one.
+- Prefer rewriting or removing a rule over adding one.
+- When a change is approved, update the skill and any public copy (such as `docs/skills/` in a repo), and add a change-log line.
+
+Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
 
 ## Change log
 
-- 2026-09-25: Created from front-end best practice research.
-- 2026-09-25: Reframed around moving from a Claude artifact to a real repo; added nesting and patterns, prototype matching, the design and code loop, and learning mode.
-- 2026-09-26: Added growth mindset, self-review, and self-healing.
-- 2026-09-26: Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts.
-- 2026-09-26: New description with clear triggers and handoffs. Charts get built only from a design already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal.
-- 2026-09-26: Shorter description. The full list of when to use it, and when not to, moved into the skill.
-- 2026-10-06: Added "Every change earns its place": name what a change protects, edit before adding, big version jumps only for a reason, ask why a check failed before fixing it. The quality pipeline now grows with the product instead of being built all at once.
+| Date | Change |
+|---|---|
+| 2026-09-25 | Created from front-end best practice research. |
+| 2026-09-25 | Reframed around moving from a Claude artifact to a real repo; added nesting and patterns, prototype matching, the design and code loop, and learning mode. |
+| 2026-09-26 | Added growth mindset, self-review, and self-healing. |
+| 2026-09-26 | Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts. |
+| 2026-09-26 | New description with clear triggers and handoffs. Charts get built only from a design already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal. |
+| 2026-09-26 | Shorter description. The full list of when to use it, and when not to, moved into the skill. |
+| 2026-10-06 | Added "Every change earns its place": name what a change protects, edit before adding, big version jumps only for a reason, ask why a check failed before fixing it. The quality pipeline now grows with the product instead of being built all at once. |
