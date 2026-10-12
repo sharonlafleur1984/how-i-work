@@ -13,41 +13,49 @@ Status: draft. The section list uses the recommended defaults. If Sharon overtur
 - Then the product manager, designer and engineer write it together, all three across every section. Each argues for a different risk, and the answers come out of that tension.
 - Make every line checkable. A requirement names how it gets checked, a metric names the problem it watches, and a skipped section says N/A and why.
 
-## Before drafting
+## Before drafting a spec
 
-The area's specialist loads this skill and plays the area owner. Then load the rest of the team:
+1. The area's specialist loads this skill and plays the area owner.
+2. Load `product-manager`, `product-designer` and `product-engineer` for the content.
+3. Load `working-with-sharon` and `ux-writer` for the wording.
+4. Answer the three questions below.
 
-- `product-manager`, `product-designer` and `product-engineer` for the content
-- `working-with-sharon` and `ux-writer` for the wording
-
-Then answer three questions.
-
-1. Who reads the spec, and what do they decide after reading it?
-2. What must it do, kept separate from what would be nice?
-3. Low fidelity or high? Agreeing on a direction, or building from it?
+The three questions:
+- Who reads the spec, and what do they decide after reading it?
+- What must it do, kept separate from what would be nice?
+- Low fidelity or high? Agreeing on a direction, or building from it?
 
 ## Who brings what
 
 Two stakeholders and three specialists.
 
-**Sharon** brings what matters, what is allowed and what is not worth doing.
-- Breaks a tie on approving the spec, answering Open decisions, and what goes on the bench.
+### Sharon
 
-**The area owner** brings the goals of the area and what keeps breaking.
+Sharon brings what matters, what is allowed and what is not worth doing. She breaks a tie on approving the spec, answering Open decisions, and what goes on the bench.
+
+### The area owner
+
+The area owner brings the goals of the area and what keeps breaking.
 - Breaks a tie on Problems to solve, Goals, Out of scope and Rabbit holes.
 - Approves the spec, and has to read the finished spec to do it.
 
-**The product manager** owns value and viability. Will people use it, and is it worth doing at all? **[CAGAN]**
+### The product manager
+
+The product manager owns value and viability. Will people use it, and is it worth doing at all? [CAGAN]
 - Says why this, why now, and what success looks like.
 - Breaks a tie on TL;DR, Requirements, How we'll judge the options, Success metrics, Risks and what we'd do, and Build order.
 
-**The product designer** owns usability and delight. Can people use it, and do they love using it? **[CAGAN]**
-- Reduces uncertainty rather than making screens. Asks whether to build it at all, frames the real problem, and thinks in systems rather than one-off pages. **[DSC]**
+### The product designer
+
+The product designer owns usability and delight. Can people use it, and do they love using it? [CAGAN]
+- Reduces uncertainty rather than making screens. Asks whether to build it at all, frames the real problem, and thinks in systems rather than one-off pages. [DSC]
 - Makes using it feel good, not only possible.
 - Breaks a tie on Page design.
 
-**The product engineer** owns feasibility. Can it be built, is it robust, and will it scale when it needs to? **[CAGAN]**
-- Keeps data consistent, handles edge cases, draws clear boundaries between parts, and keeps the system simple to change. **[AWM]**
+### The product engineer
+
+The product engineer owns feasibility. Can it be built, is it robust, and will it scale when it needs to? [CAGAN]
+- Keeps data consistent, handles edge cases, draws clear boundaries between parts, and keeps the system simple to change. [AWM]
 - Designs so growth later does not mean a rebuild, without building for scale before it is needed.
 - Breaks a tie on Sources of truth, Fields and editors, and Dependencies.
 
@@ -55,30 +63,32 @@ Two stakeholders and three specialists.
 
 Breaking a tie is not owning a section. The three specialists work every section together, and a designer with a better idea about Sources of truth should say it. If the three cannot agree, the tie-breaker decides and says why.
 
-One hard edge applies to the stakeholders. A stakeholder who writes their own requirements and then approves them has approved nothing. So the area owner and Sharon bring goals and problems and sign off. When either writes part of a spec, they do it in a specialist's role, and somebody else approves it.
+One hard edge applies to the stakeholders. A stakeholder who writes their own requirements and then approves them has approved nothing.
+
+So the area owner and Sharon bring goals and problems and sign off. When either writes part of a spec, they do it in a specialist's role, and somebody else approves it.
 
 ## Rules for every spec
 
-1. **The spec describes the best answer, not the current one.** How the area works today is there to be challenged. If the best answer replaces a source of truth, a field or a tool, the spec says so.
-2. **TL;DR stands alone at the top.** At most three bullets, readable without the rest. **[ADK]**
-3. **Goals and Out of scope never overlap.** If something sits in both, one of them is wrong. **[ADK]**
-4. **Every requirement says how it gets checked, on the same line.** A requirement nobody can verify is a wish. **[ADK]**
-5. **Everything that needs Sharon goes in Open decisions**, each item with a recommendation. Nothing that needs her is left in the prose. **[ADK]**
-6. **A section that does not apply says N/A, with one line saying why.** A silently missing section makes a gap look like a decision. **[ADK]**
-7. **References are concrete.** A real link, a database ID or a file path, never "see the Notion page." **[ADK]**
-8. **No preamble.** Say the thing, not what the section will describe. **[ADK]**
-9. **Decide fidelity first.** Low fidelity agrees a direction, high fidelity is built from. Mixing them produces neither. **[LENNY]**
-10. **The test is whether the product engineer opens it.** A complete spec nobody reads has failed. **[LENNY]**
-11. **A spec can add a section the list does not have** if it names the problem that section solves. The list is the floor, not the ceiling.
+1. **The spec describes the best answer,** not the current one. How the area works today is there to be challenged. If the best answer replaces a source of truth, a field or a tool, the spec says so.
+2. **TL;DR stands alone at the top.** At most three bullets, readable without the rest. [ADK]
+3. **Goals and Out of scope never overlap.** If something sits in both, one of them is wrong. [ADK]
+4. **Every requirement says how it gets checked,** on the same line. A requirement nobody can verify is a wish. [ADK]
+5. **Everything that needs Sharon goes in Open decisions,** each item with a recommendation. Nothing that needs her is left in the prose. [ADK]
+6. **A section that does not apply says N/A,** with one line saying why. A silently missing section makes a gap look like a decision. [ADK]
+7. **References are concrete.** A real link, a database ID or a file path, never "see the Notion page." [ADK]
+8. **No preamble.** Say the thing, not what the section will describe. [ADK]
+9. **Decide fidelity first.** Low fidelity agrees a direction, high fidelity is built from. Mixing them produces neither. [LENNY]
+10. The test is **whether the product engineer opens it.** A complete spec nobody reads has failed. [LENNY]
+11. **A spec can add a section** the list does not have if it names the problem that section solves. The list is the floor, not the ceiling.
 
 ## How to write a success metric
 
 Four steps, in order. If one has no answer, the metric comes out.
 
 1. **The problem it watches.** Named and specific, taken from Problems to solve.
-2. **The one observable thing that changes if the problem is fixed.** One, not a dashboard of five.
+2. **The one observable thing** that changes if the problem is fixed. One, not a dashboard of five.
 3. **Where that number comes from.** A named source of truth.
-4. **What you would do if it moved the wrong way.** If the honest answer is nothing, the metric is trivia.
+4. **What you would do** if it moved the wrong way. If the honest answer is nothing, the metric is trivia.
 
 Example from Home Management:
 
@@ -91,10 +101,11 @@ Step 4 is the one that gets skipped, and the one that makes the metric real.
 
 ## What goes wrong in a spec
 
-- **A requirement and a design choice in one bullet.** In "show the meal plan as a carousel," the meal plan is required and the carousel is a design choice. **[ADK]**
-- **"Best practice" standing in for a requirement**, with no measurable outcome. **[ADK]**
-- **Fields and screens named before the direction is agreed.** **[LENNY]**
-- **Writing for the author** instead of the product engineer. **[LENNY]**
+- **A requirement and a design choice** in one bullet. [ADK]
+  - In "show the meal plan as a carousel," the meal plan is required and the carousel is a design choice.
+- **"Best practice" standing in for a requirement**, with no measurable outcome. [ADK]
+- **Fields and screens named** before the direction is agreed. [LENNY]
+- **Writing for the author** instead of the product engineer. [LENNY]
 
 ## The section list
 
@@ -123,7 +134,13 @@ This group is where the area owner has something to say that the specialists do 
 - **Requirements**, each tagged Must, Should or Could
 - **Dependencies**, when it applies
 
-Page design covers the area's own page, what the Life Hub shows from it, what sits behind progressive disclosure (hidden until you ask for it), and what never appears anywhere. It stays one section, because splitting UX from UI adds a section without adding a decision.
+Page design covers these parts:
+- the area's own page
+- what the Life Hub shows from it
+- what sits behind progressive disclosure (hidden until you ask for it)
+- what never appears anywhere
+
+It stays one section, because splitting UX from UI adds a section without adding a decision.
 
 ### Choices, and what is still open
 
@@ -141,7 +158,7 @@ Page design covers the area's own page, what the Life Hub shows from it, what si
 
 ### What happens next
 
-- **Build order**, in dependency order, when something is being built
+**Build order**, in dependency order, when something is being built.
 
 ### Sections left out on purpose
 
@@ -174,7 +191,9 @@ The blanks that exist, and who fills each one.
 - **Do not buy again** is filled by Sharon.
 - **Reorder by** is calculated from usage. Nobody types it.
 
-Almost every field is machine filled, person filled or computed. One combination needs naming in full: "a machine fills it and a person may overwrite." Listing two editors loses the overwrite, which is how a synced assignments list once broke.
+Almost every field is machine filled, person filled or computed. One combination needs naming in full: "a machine fills it and a person may overwrite."
+
+Listing two editors loses the overwrite, which is how a synced assignments list once broke.
 
 ### How the area works today
 
@@ -182,7 +201,9 @@ What happens right now, including the parts that happen in someone's head. Not a
 
 Home Management today: meals live in Pantry Persona, chores live in Sharon's memory, tours live on the calendar, and nothing says when a chore got skipped. That skipped chore becomes an entry in Problems to solve.
 
-This section is never N/A. "Nothing happens today, it falls through" is an answer. It is also the one section the spec is allowed to overturn: writing down today's setup is how the spec argues against it.
+This section is never N/A. "Nothing happens today, it falls through" is an answer.
+
+It is also the one section the spec is allowed to overturn. Writing down today's setup is how the spec argues against it.
 
 ## Where ideas go
 
@@ -194,8 +215,13 @@ So the spec carries On the bench as links only, with no detail and no pitching. 
 
 Every spec is two linked pages, because the product repo is public and the household is private.
 
-- **The public spec** goes in the project's repo wiki, in `docs/wiki/`. It holds the sections, rules and requirements, with no household details and no specialist names. Roles stand in for names: "the home specialist," not a nickname.
-- **The private details** go in a Notion page in [Project Documents](https://app.notion.com/p/a3bcb29062cf4ad288dc1c8b067b93ed). That page holds the real examples, the actual fields, and anything only this household would know.
+| Page | Where it goes | What it holds |
+|---|---|---|
+| Public spec | The project's repo wiki, in `docs/wiki/` | The sections, rules and requirements, with no household details and no specialist names |
+| Private details | A Notion page in [Project Documents](https://app.notion.com/p/a3bcb29062cf4ad288dc1c8b067b93ed) | The real examples, the actual fields, and anything only this household would know |
+
+In the public spec, roles stand in for names: "the home specialist," not a nickname.
+
 - **Each page links to the other.** The public spec says which sections have private detail, without saying what it is.
 - **Index both in the same pass.** Add a row to `docs/wiki/Documents.md` in the pull request, and a row in Project Documents.
 
@@ -205,13 +231,15 @@ The test for any line: would it make sense to a stranger who never sees the hous
 
 Sharon reads every spec, so `working-with-sharon` and `ux-writer` both apply. Run the ux-writer checker on every finished spec.
 
-Familiar names were swapped for plainer ones:
+Familiar names were swapped for plainer ones.
 
-- **Data model** is Fields and editors.
-- **Background and current state** is How the area works today.
-- **Evaluation criteria** is How we'll judge the options.
-- **Terminology** is What the words mean.
-- **Non-goals** is Out of scope.
+| Familiar name | Name in a spec |
+|---|---|
+| Data model | Fields and editors |
+| Background and current state | How the area works today |
+| Evaluation criteria | How we'll judge the options |
+| Terminology | What the words mean |
+| Non-goals | Out of scope |
 
 ## Sources
 
