@@ -11,10 +11,10 @@ Every new repo gets one ruleset, "Protect main." Importing the ready-made file t
 ## Fastest: import the file
 
 1. In the repo, open **Settings**.
-2. In the sidebar, click **Rules › Rulesets**.
-3. Click the arrow next to **New ruleset**.
-4. Choose **Import a ruleset**.
-5. Pick [`ruleset-protect-main.json`](ruleset-protect-main.json) from this folder.
+2. In the sidebar, under "Code and automation," click **Rules › Rulesets**.
+3. Click **New ruleset**. It opens a menu.
+4. Choose **Import a ruleset**, not "New branch ruleset."
+5. Pick [`ruleset-protect-main.json`](ruleset-protect-main.json).
 6. Check the screen against the table below.
 7. Click **Create**.
 
