@@ -70,6 +70,7 @@ Each skill reviews itself after a task and proposes any changes to improve my sk
 ### Each change triggers a pull request
 
 - Code, docs, and the wiki all change through pull requests I review and merge.
+- Every repo's main branch is protected so changes can only arrive through a pull request ([cheat sheet](templates/github-ruleset.md)).
 - Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
 - The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged ([template](templates/publish-wiki.yml)).
 
