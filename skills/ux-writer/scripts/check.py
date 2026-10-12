@@ -32,6 +32,11 @@ HURT = {
     'mankind': 'people', 'manpower': 'staff', 'sexual preference': 'sexual orientation',
     'illegal alien': 'undocumented', 'the disabled': 'disabled people',
 }
+# Words a writer must judge in context: they fail a check only as warnings.
+JUDGMENT = {'only if it carries meaning', 'usually cut'}
+# "easy" is cut when it claims a task is easy for the reader, not when it describes a thing.
+EASY_CLAIM = re.compile(r"\b(is|are|it's|its|that's|was|be|so|very|pretty|really|super|quite)\s+easy\b"
+                        r"|\beasy\s+(to|as|enough)\b", re.I)
 HEDGE = re.compile(r'\b(might|may|could)\s+(possibly|perhaps|maybe)\b'
                    r'|\b(possibly|perhaps)\s+(might|may)\b', re.I)
 POINTER = re.compile(r'^(not|this|these|that|those|it|its|they|them|their|other)\b', re.I)
@@ -133,7 +138,12 @@ def check(path):
             f['hedge stack'].append((n, s[:72]))
         for w, fix in CUT.items():
             if re.search(r'\b%s\b' % re.escape(w), low):
-                f['cut on sight'].append((n, '"%s" -> %s' % (w, fix)))
+                if w == 'easy' and not EASY_CLAIM.search(low):
+                    continue             # "easy dinners" describes a thing; "it's easy" judges the reader's task
+                if fix in JUDGMENT:
+                    f['cut unless it carries meaning (warning)'].append((n, '"%s" -> %s' % (w, fix)))
+                else:
+                    f['cut on sight'].append((n, '"%s" -> %s' % (w, fix)))
         for w, fix in HURT.items():
             if re.search(r'\b%s\b' % re.escape(w.replace('/', r'\/')), low):
                 f['language that can hurt'].append((n, '"%s" -> %s' % (w, fix)))
