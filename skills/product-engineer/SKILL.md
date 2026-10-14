@@ -307,6 +307,8 @@ Each layer runs a tool and must pass its gate.
 
 ### Where the pipeline runs
 
+A required check that can't apply to a change (for example, screenshots for a docs-only change) passes in seconds instead of running in full. Anything it doesn't recognize still gets the full check.
+
 - Git hooks (Lefthook or Husky) run lint, types, and unit tests before commit.
 - GitHub Actions runs everything.
 - Netlify builds a preview link for every pull request.
@@ -329,7 +331,12 @@ If the repo has a GitHub wiki, keep a plain-language dashboard there with progre
 
 Sharon is a designer learning to work in code. The repo should teach as it grows.
 
-- Every pull request description has a short "What changed and how it works" section in plain language. It covers what the user will notice, which files changed, and one sentence on the concept behind it.
+- Every pull request opens with **Your turn**, so Sharon knows what to do in 3 seconds:
+  - **Look at:** deep links to the 2 or 3 stories or pages that changed in the preview
+  - **Decide:** the one question for her, or "Nothing, just approve"
+  - **Then:** merge, or what to merge first
+- Below it, a folded "What changed and how it works" section in plain language covers what the user will notice, which files changed, and one sentence on the concept behind it.
+- Screen changes show as before-and-after pictures in the pull request itself, never only in a download.
 - The first time a new term, tool, or file type appears, explain it in plain language and add it to `docs/glossary.md`.
 - Leave short comments in code only where the why is not obvious. Explain decisions, not syntax.
 - When there are two reasonable ways to do something, name both briefly and say which was chosen and why.
@@ -346,11 +353,13 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] Tests added or updated; the whole pipeline passes
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
 - [ ] Docs and glossary updated if behavior, a rule, or a new term changed
-- [ ] Small, focused commit with a clear message; pull request with before and after screenshots and a plain-language "how it works" note
+- [ ] Small, focused commit with a clear message, pushed to its branch right away (a pushed branch is a backup and never touches `main`)
+- [ ] Pull request opens with "Your turn", shows before and after pictures, and is merged the same day or the next; no stacking
 
 ## 13. Working with Sharon
 
 - Writing to Sharon follows `working-with-sharon`.
+- At the start of a session, tell her which pull requests are open and which are waiting on her.
 - She is a designer learning to work in code. Explain each term in plain language the first time it comes up.
 
 ## 14. Growth mindset: how this skill keeps getting better
@@ -391,3 +400,4 @@ Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-d
 | 2026-09-26 | New description with clear triggers and handoffs. Charts get built only from a design already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal. |
 | 2026-09-26 | Shorter description. The full list of when to use it, and when not to, moved into the skill. |
 | 2026-10-06 | Added "Every change earns its place": name what a change protects, edit before adding, big version jumps only for a reason, ask why a check failed before fixing it. The quality pipeline now grows with the product instead of being built all at once. |
+| 2026-10-13 | Pull requests open with "Your turn" (look at, decide, then), with pictures in the pull request. Branches are pushed right after each commit. Pull requests stay small and merge within a day. Required checks that can't apply pass fast. Found when Sharon pulled every repo and her glass work was missing, and when she couldn't tell what a pull request needed from her. |
