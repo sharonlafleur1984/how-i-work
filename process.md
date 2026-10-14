@@ -1,6 +1,6 @@
 # The process
 
-**Last updated:** October 5, 2026
+**Last updated:** October 13, 2026
 
 How a project goes from a problem to shipped work.
 
@@ -70,6 +70,8 @@ Each skill reviews itself after a task and proposes any changes to improve my sk
 ### Each change triggers a pull request
 
 - Code, docs, and the wiki all change through pull requests I review and merge.
+- Every pull request opens with "Your turn": what to look at, what to decide and what to do next ([template](templates/pull_request_template.md)). Screen changes show as before-and-after pictures in the pull request.
+- Pull requests stay small and merge the same day or the next. Branches are pushed right after each commit, so work is backed up even before it's ready.
 - Every repo's main branch is protected so changes can only arrive through a pull request ([cheat sheet](templates/github-ruleset.md)).
 - Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
 - The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged ([template](templates/publish-wiki.yml)).
