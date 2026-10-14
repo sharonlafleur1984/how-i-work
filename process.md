@@ -1,6 +1,6 @@
 # The process
 
-**Last updated:** October 13, 2026
+**Last updated:** October 14, 2026
 
 How a project goes from a problem to shipped work.
 
@@ -75,6 +75,7 @@ Each skill reviews itself after a task and proposes any changes to improve my sk
 - Every repo's main branch is protected so changes can only arrive through a pull request ([cheat sheet](templates/github-ruleset.md)).
 - Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
 - The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged ([template](templates/publish-wiki.yml)).
+- Every Netlify site and the Supabase setup are listed on one page, [How everything connects](https://github.com/sharonlafleur1984/designer-toolkit/wiki/Connections). A pull request that adds or changes a Netlify site, its `netlify.toml`, or anything in Supabase updates that page at the same time.
 
 ### Decisions are always logged and findable
 
