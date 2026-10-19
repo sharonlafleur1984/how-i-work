@@ -40,7 +40,6 @@ Use competitor solutions in your ideation ONLY when it is truly the best solutio
 
 After a problem has been clearly identified, assign it to the Roadmap, and clearly identify what success looks like. Assign milestones (if needed) to indicate progress toward the solution if there are multiple jobs to be done.
 
-- Limit milestones to three max.
 - Ideation that isn't on the roadmap is documented and stored in the backlog. 
 - A problem can move from Idea → Researched → My Decision → Decided
 - Only when an idea reaches "Decided" can it be added to the roadmap.
