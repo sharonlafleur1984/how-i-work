@@ -36,11 +36,11 @@ A planner that helps high school students and their parents or guardians map out
 
 [Prototype](https://afterhighschool.netlify.app/) · [Wiki](https://github.com/sharonlafleur1984/after-graduation/wiki)
 
-### [Design System](https://github.com/sharonlafleur1984/design-system-skeleton)
+### [Design System](https://github.com/sharonlafleur1984/lantern-design-system)
 
 One design system for all my products: a shared base, with a theme for each product.
 
-[Storybook](https://designsystemskeleton.netlify.app/) · [Wiki](https://github.com/sharonlafleur1984/design-system-skeleton/wiki)
+[Storybook](https://lanterndesignsystem.netlify.app/) · [Wiki](https://github.com/sharonlafleur1984/lantern-design-system/wiki)
 
 ### [Life Hub](https://github.com/sharonlafleur1984/life-hub)
 
