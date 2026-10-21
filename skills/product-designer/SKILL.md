@@ -27,7 +27,6 @@ Don't use it for:
 - wording, headings, empty-state or error text, emails or pitches (`ux-writer`)
 - building code, wiring a chart library or fixing tests (`product-engineer`, after a design exists)
 - roadmaps, milestones and decision logs (`product-manager`)
-- slide decks, note summaries or factual questions
 
 ## 1. Sharon's design principles win every tie
 

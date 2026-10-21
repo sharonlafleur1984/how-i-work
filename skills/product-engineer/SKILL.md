@@ -47,9 +47,20 @@ Fix the rule, file or component that already exists first. Leave the semantic la
 
 Upgrade a major version when it fixes a security problem, unblocks real work, or the old version is losing support. A newer version existing is never reason enough.
 
-### When a check fails, ask why before fixing
+### When something breaks, find the cause before fixing
 
 If the fix is "add something so the check passes," first ask whether the check protects anything here. Never loosen a rule quietly. Say so in the pull request.
+
+For any bug, failing test or odd behavior:
+
+1. Read the whole error.
+2. Make the problem happen again on purpose.
+3. Compare with what changed recently and with similar code that works.
+4. Write down one guess about the cause. Test it with the smallest possible change.
+5. Once the cause is confirmed, write a test that fails because of the bug. Then fix it with one change.
+6. After three failed fixes, stop. The design is probably the problem. Bring it to Sharon instead of trying a fourth.
+
+Never fix a symptom while the cause is unknown.
 
 ## Start from the prototype
 
@@ -74,6 +85,16 @@ If the fix is "add something so the check passes," first ask whether the check p
 3. Write a short plan covering what changes, which files, and which tests prove it.
 4. Show the plan before large changes.
 5. Never commit real personal data. Use sample data only. Secrets live in `.env` (git-ignored) and CI secrets.
+
+### Tests come first
+
+For every feature or fix:
+
+1. Write down in plain words what it should do, from Sharon's point of view. The tests check her intent, not the agent's.
+2. Write a test for that, run it, and watch it fail for the right reason. A test that passes before the code exists checks nothing.
+3. Write the smallest code that makes it pass. Tidy up only while it keeps passing.
+
+Throwaway prototypes and config files are the exceptions.
 
 ## 1. Order of work
 
@@ -350,7 +371,9 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] Works at phone, tablet, and desktop widths; no horizontal scroll
 - [ ] Reduced motion respected
 - [ ] Storybook page added or updated; Figma link and Code Connect updated if used
-- [ ] Tests added or updated; the whole pipeline passes
+- [ ] Each new test was seen failing before the code was written
+- [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof
+- [ ] A different agent reviewed it for bugs, security and code quality (Thermos in Cursor, or Codex review on GitHub)
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
 - [ ] Docs and glossary updated if behavior, a rule, or a new term changed
 - [ ] Small, focused commit with a clear message, pushed to its branch right away (a pushed branch is a backup and never touches `main`)
@@ -389,6 +412,8 @@ At the end of a task, ask three questions.
 
 Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
 
+The debugging method, tests first and proof before done are adapted from [Superpowers](https://github.com/obra/superpowers) (open-source license).
+
 ## Change log
 
 | Date | Change |
@@ -397,7 +422,9 @@ Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-d
 | 2026-09-25 | Reframed around moving from a Claude artifact to a real repo; added nesting and patterns, prototype matching, the design and code loop, and learning mode. |
 | 2026-09-26 | Added growth mindset, self-review, and self-healing. |
 | 2026-09-26 | Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts. |
-| 2026-09-26 | New description with clear triggers and handoffs. Charts get built only from a design already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal. |
+| 2026-09-26 | New description with clear triggers and handoffs. Charts get built only from a design `product-designer` has already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal. |
 | 2026-09-26 | Shorter description. The full list of when to use it, and when not to, moved into the skill. |
 | 2026-10-06 | Added "Every change earns its place": name what a change protects, edit before adding, big version jumps only for a reason, ask why a check failed before fixing it. The quality pipeline now grows with the product instead of being built all at once. |
 | 2026-10-13 | Pull requests open with "Your turn" (look at, decide, then), with pictures in the pull request. Branches are pushed right after each commit. Pull requests stay small and merge within a day. Required checks that can't apply pass fast. Found when Sharon pulled every repo and her glass work was missing, and when she couldn't tell what a pull request needed from her. |
+| 2026-10-20 | Added a debugging method, tests first and proof before done, adapted from Superpowers. Every change now gets a fresh review before merge. |
+| 2026-10-21 | Merged the Oct 13 and Oct 20 edits. The repo copy had Oct 13 and the claude.ai copy had Oct 20; neither had both. |
