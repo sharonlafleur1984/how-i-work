@@ -5,7 +5,7 @@ Part of the `ux-writer` skill, section 11. Everything `scripts/check.py` flags, 
 ## Errors fail the run (exit code 1)
 
 - Em dashes, en dashes, stray exclamation marks and emoji
-- The cut-on-sight words, and the language in section 4
+- The cut-on-sight words, and the language in section 4. "Easy" only counts when it calls a task easy ("it's easy to"), not when it describes a thing ("easy dinners").
 - Headings and table column headers that point instead of naming a subject
 - Headings that are a count rather than a subject
 - Bullets carrying a colon of their own, or holding more than one idea
@@ -21,6 +21,7 @@ Part of the `ux-writer` skill, section 11. Everything `scripts/check.py` flags, 
 
 ## Warnings need an outcome but don't fail the run
 
+- "Actually" and "currently," which stay only when they carry meaning
 - Sentences over 25 words, and paragraphs over 50 words
 - Numbered steps that chain actions with "then"
 - 300 words without a heading, and a section that opens by describing itself
