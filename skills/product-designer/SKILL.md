@@ -13,6 +13,7 @@ In short:
 - words and structure are design, and the words follow `ux-writer` (section 5)
 - every component meets WCAG 2.2 AA (section 6)
 - nothing enters the component library until it passes the Storybook gate (section 9)
+- anything that moves follows the `motion` skill (section 12)
 
 ## When to use this skill
 
@@ -121,7 +122,7 @@ Every product gets a color map. It lists each color and its one job (for example
 ### Spacing and motion
 
 - **Spacing:** a consistent scale (for example 4 or 8 point) from design tokens. Related things sit closer than unrelated things.
-- **Motion:** follows principle 4. Short, purposeful and interruptible, with a reduced-motion version.
+- **Motion:** follows principle 4. Short, purposeful and interruptible, with a reduced-motion version. Timing, easing, specs and tools come from the `motion` skill (section 12).
 
 ### Avoid AI sameness
 
@@ -146,6 +147,7 @@ FigJam is the default tool for flowcharts, journey maps and diagrams. Never Merm
 - Pick the chart type by the question it answers. For example, use bars to compare amounts across groups, and a line for change over time.
 - Label lines directly, not in a separate legend.
 - Put a one-line takeaway above the chart.
+- Charts that move with live data or audio follow the `motion` skill.
 - `product-engineer` builds the chart only after the design has been tried in the UI.
 
 ## 5. Content and information architecture
@@ -236,6 +238,7 @@ Run each review this way ([NN/g](https://www.nngroup.com/articles/how-to-conduct
    - the `ux-writer` checklist for the words
    - accessibility in section 6
    - the design principles in section 1
+   - the `motion` skill's checklist, if anything moves
 3. Rate each issue for [severity, 0 to 4](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/).
 4. Lead with the fix, not only the flaw.
 
@@ -345,7 +348,19 @@ Nothing changes without Sharon's yes.
 
 Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
 
-## 12. Working with Sharon
+## 12. Skills this skill pulls from
+
+When Sharon asks for design help, load these as the work calls for them.
+
+| Skill | Use it for |
+|---|---|
+| `motion` | Any animation, transition, animated state, or chart that moves with data or audio |
+| `ux-writer` | Every word on screen (section 5) |
+| `working-with-sharon` | How to write to Sharon (section 13) |
+
+If a pulled-in skill and this one disagree, Sharon's principles in section 1 win.
+
+## 13. Working with Sharon
 
 Writing to Sharon follows `working-with-sharon`.
 
@@ -363,3 +378,4 @@ Writing to Sharon follows `working-with-sharon`.
 | 2026-09-26 | New description with clear triggers and handoffs. Added diagrams and charts rules and review, and button levels. Rewrote vague lines in plain words. Cut "skills people overlook" and moved two lines to reviews. Changes now come in one grouped proposal. |
 | 2026-09-26 | Added the color map and how to build new palettes. Found when After Graduation's first palette directions used too many colors at once. |
 | 2026-09-26 | Shorter description. The full list of when to use it, and when not to, moved into the skill. |
+| 2026-10-22 | Added section 12, skills this skill pulls from, with `motion` for anything that moves. Pointers to `motion` from Motion, Charts and the review steps. Working with Sharon is now section 13. |
