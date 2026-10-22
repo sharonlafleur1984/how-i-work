@@ -1,6 +1,6 @@
 # How I work
 
-**Last updated:** October 6, 2026
+**Last updated:** October 22, 2026
 
 - I'm Sharon LaFleur, a product designer with about 8 years of experience. 
 - This is how I design and build products with AI
@@ -26,6 +26,7 @@ These are read-only copies. The live versions live in my Claude account. Read-on
 - [`/ux-writer`](skills/ux-writer/SKILL.md)
 - [`/product-engineer`](skills/product-engineer/SKILL.md)
 - [`/spec-writer`](skills/spec-writer/SKILL.md)
+- [`/motion`](skills/motion/SKILL.md)
 - [`/working-with-sharon`](skills/working-with-sharon/SKILL.md)
 
 ## My projects
