@@ -19,7 +19,7 @@
 
 ## My custom skills
 
-These are read-only copies. The live versions live in my Claude account. Read-only skills are updated whenever a skill changes. Each skill is self-healing and reviews itself.
+These are read-only copies. Live versions run in Claude or Codex. Read-only skills are updated whenever a skill changes. Each skill is self-healing and reviews itself.
 
 - [`/product-manager`](skills/product-manager/SKILL.md)
 - [`/product-designer`](skills/product-designer/SKILL.md)
