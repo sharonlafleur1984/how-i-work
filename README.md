@@ -1,6 +1,6 @@
 # How I work
 
-**Last updated:** October 22, 2026
+**Last updated:** October 23, 2026
 
 - I'm Sharon LaFleur, a product designer with about 8 years of experience. 
 - This is how I design and build products with AI
@@ -19,7 +19,7 @@
 
 ## My custom skills
 
-These are read-only copies. The live versions live in my Claude account. Read-only skills are updated whenever a skill changes. Each skill is self-healing and reviews itself.
+These are read-only copies. Live versions run in Claude or Codex. Read-only skills are updated whenever a skill changes. Each skill is self-healing and reviews itself.
 
 - [`/product-manager`](skills/product-manager/SKILL.md)
 - [`/product-designer`](skills/product-designer/SKILL.md)
@@ -28,6 +28,7 @@ These are read-only copies. The live versions live in my Claude account. Read-on
 - [`/spec-writer`](skills/spec-writer/SKILL.md)
 - [`/motion`](skills/motion/SKILL.md)
 - [`/working-with-sharon`](skills/working-with-sharon/SKILL.md)
+- [`/meeting-project-update`](skills/meeting-project-update/SKILL.md): Keep the wiki, live project and shared workspace aligned after meetings.
 
 ## My projects
 
