@@ -13,6 +13,8 @@ Resolve the repository, task tracker and shared workspace from the current reque
 
 Read the meeting transcript or participant recap. Archive available transcripts and recordings in the project’s authorized local storage, preserving source and coverage. Keep private source material out of public repositories. A meeting time or unreadable link establishes no decisions.
 
+Request the full transcript on purpose; Notion leaves it out unless asked. Save the full meeting notes and transcript in that meeting’s notes record, with a link to the source. If the notes record is public, save them in private storage and link to them instead.
+
 Compare the source with current records and open update pull requests. Preserve IDs, prior decisions and unrelated content. Repeated runs must not create duplicate questions, tasks, decisions or pull requests.
 
 ## Reconcile the meeting
@@ -20,11 +22,15 @@ Compare the source with current records and open update pull requests. Preserve 
 - Current focus owns immediate priorities, review preparation and reference links.
 - Decisions owns confirmed choices, their date, decision maker, reason, scope and source. Link superseding decisions without erasing history.
 - Questions owns unresolved inputs whose answers change the work, with an answer owner and what each answer changes.
-- Meeting notes owns the dated recap and action items; update the index when adding a record.
+- Meeting notes owns the dated recap, action items, full notes and transcript; update the index when adding a record.
+
+Check every AI summary item against the transcript before filing it. A summary can make a "could be" sound settled; file it as a question, not a decision.
 
 Keep proposals distinct from approvals and work-planning choices distinct from client decisions. Log durations only when supplied; do not infer working time from activity timestamps.
 
 ## Update all affected destinations
+
+On a run Sharon starts, show her the planned changes for each destination and wait for her OK before writing. Her earlier agreement to a recommendation is not approval.
 
 1. Update repository wiki sources and relevant issue bodies.
 2. Update the live project tracker’s item order, applicable statuses, prerequisites, estimates and roadmap date fields.
