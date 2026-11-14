@@ -5,7 +5,9 @@ description: Update a project’s wiki, live task tracker and shared workspace a
 
 # Update a project after a meeting
 
-Keep the project’s current work, decisions, questions and forecast consistent across its repository, live project tracker and shared workspace. Use Sharon’s ux-writer, working-with-sharon and product-manager skills, plus the project’s voice guidance.
+Keep the project’s current work, decisions, questions and forecast consistent across its repository, live project tracker and shared workspace. Use Sharon’s ux-writer and working-with-sharon skills, plus the project’s voice guidance.
+
+Load two planning skills before touching the tracker. The product-manager skill decides what the roadmap, milestones and statuses should say. The project-manager skill drafts each issue and tracker change and checks for duplicates.
 
 ## Read the project context
 
@@ -34,7 +36,8 @@ On a run Sharon starts, show her the planned changes for each destination and wa
 
 1. Update repository wiki sources and relevant issue bodies.
 2. Update the live project tracker’s item order, applicable statuses, prerequisites, estimates and roadmap date fields.
-3. Update the shared workspace’s current focus, decisions, meeting record and forecast where relevant.
+3. Update milestones: move issues whose priority changed, and correct milestone descriptions and due dates.
+4. Update the shared workspace’s current focus, decisions, meeting record and forecast where relevant.
 
 A wiki merge does not reorder a project. Inspect the live view’s filters, grouping, sorting and date fields. Move existing items instead of duplicating them. Check that newly added tasks appear in the intended roadmap group.
 
@@ -46,7 +49,7 @@ Use the same finish date and scope across the planning issue, project overview, 
 
 Use a branch and the project’s pull-request workflow. An independent reviewer checks preserved meaning when rewriting existing content. Run Sharon’s writing checker and review links and IDs.
 
-Verify each affected destination after saving: repository commit or pull request, live tracker order and dates, and shared workspace content. After an authorized merge, check the wiki publishing result. A failed publish is unfinished work.
+Verify each affected destination after saving: repository commit or pull request, live tracker order and dates, milestones, and shared workspace content. After an authorized merge, check the wiki publishing result. A failed publish is unfinished work.
 
 Keep a partial update incomplete and record what remains. Reconcile saved state before retrying; never replay successful writes blindly. Report the saved result and any unresolved gap without claiming the whole update is done.
 
