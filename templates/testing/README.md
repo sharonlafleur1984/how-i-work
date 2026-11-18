@@ -10,7 +10,8 @@
 | [tests/css.ts](tests/css.ts) | `tests/` | One shared way for tests to read CSS |
 | [tests/css-rules.test.ts](tests/css-rules.test.ts) | `tests/` | No `!important` (except to honor reduce motion, forced colors or more contrast), no ID selectors, logical spacing |
 | [tests/axe.test.tsx](tests/axe.test.tsx) | `tests/` | Fails on any axe accessibility issue on the main page |
-| [test.yml](test.yml) | `.github/workflows/` | Runs the tests on every pull request |
+| [pre-push](pre-push) | `.githooks/` | Runs the checks on your Mac before every push (every repo; the only check in a private repo) |
+| [test.yml](test.yml) | `.github/workflows/` | Public repos only: runs the tests on every pull request. A private repo's Actions minutes cost money, so it gets no workflow |
 
 ## Set up
 
@@ -19,7 +20,8 @@
 3. Add `"test": "vitest run"` to the scripts in `package.json`.
 4. In `tests/axe.test.tsx`, point the import at the repo's main page.
 5. Run `npm test`. Fix what fails before relying on it.
-6. Once `test.yml` has run on a pull request, turn on **Require status checks** and add **test** ([ruleset guide](../github-ruleset.md)).
+6. Copy `pre-push` to `.githooks/pre-push`, make it executable (`chmod +x`), and point git at the folder: add `"prepare": "git config core.hooksPath .githooks"` to the scripts in `package.json`, so `npm install` sets it up on every clone.
+7. Public repos only: once `test.yml` has run on a pull request, turn on **Require status checks** and add **test** ([ruleset guide](../github-ruleset.md)). A private repo keeps no required status check: the hook is the gate.
 
 ## Rules the kit follows
 

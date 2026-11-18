@@ -17,6 +17,7 @@ Start here. This file tells Claude (and any developer) where everything lives, s
 - **Every commit names its Claude session.** End each commit message with `Claude-Session:` and the link to the session that made it, so any branch can be traced back to where the work happened.
 - **Main is protected.** A new repo gets the "Protect main" ruleset ([cheat sheet](https://github.com/sharonlafleur1984/how-i-work/blob/main/templates/github-ruleset.md)). Remind Sharon if it's missing.
 - **Finish with a pull request.** Pushed work always gets one, even when it's small. A branch with no pull request looks abandoned.
+- **No GitHub Actions in a private repo.** The checks run on the Mac in the pre-push hook (`.githooks/pre-push`: lint, types, tests, build), and a pull request merges on that. Don't add a workflow or a required status check; if one shows up, remove it and say so. (Public repos may use Actions, which are free there.)
 
 ## Where everything is
 
