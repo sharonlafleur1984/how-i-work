@@ -43,6 +43,12 @@ Before adding a check, dependency, file or doc, say in one line what it guards a
 
 Fix the rule, file or component that already exists first. Leave the semantic layer (the domain package, with its names, types and schemas) and the docs cleaner than you found them. When a change touches a domain concept, update the semantic layer and the docs together.
 
+### Archive, never delete
+
+Anything that leaves the live work (a picture, a build, a function nothing calls) moves to `archive/` at its old path. A row in `archive/README.md` says what it is, where it came from and why it's parked.
+
+Builds, tests and lint skip `archive/`. Sharon decides what leaves the archive, the way she clears the Archive page in her Figma files. Ask before archiving anything the current task didn't make.
+
 ### Make big version jumps only for a reason
 
 Upgrade a major version when it fixes a security problem, unblocks real work, or the old version is losing support. A newer version existing is never reason enough.
@@ -97,6 +103,8 @@ Unsaved work hides. A branch switch moves it into a stash, and a new branch from
 2. **Short-lived branches from fresh `main` (trunk-based development).** Every branch starts from `main` right after a Pull, never from another branch or an old copy. One task per branch, merged into `main` within a day or two. If a branch has to live longer, update it from `main` every day so overlaps stay small. Unfinished work that needs to land merges behind a switch (like Voyager's phase gating) instead of waiting on a side branch. Never keep a long-running branch that collects other branches' work; that's a second `main`.
 3. **One branch per repo at a time.** Work on the branch that's already checked out. Don't start another branch or worktree, and don't switch branches, while it's open. Start the next branch only after it's merged, from her newest work (never an old local `main`). A new branch never tracks `main`, so a push can't land there.
 4. **Commit as you go, push in chunks.** Commit each change as soon as it's done, so nothing sits uncommitted. Push when a chunk of commits is ready, then keep going on the same branch.
+   - **Stage files by name, never `git add -A` or a folder.** The checkout is shared: Sharon or another agent may be editing it at the same time. Run `git status --short` right before every commit and stage only the files this task touched. Leave other changes alone: name them in the summary, don't revert them.
+   - **A push after the merge isn't on `main`.** If Sharon merged the pull request before the last push, say so at once and open a new pull request for what's left.
 5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything. The last message says "Nothing left uncommitted" and how many commits are waiting to be pushed.
 
 These steps run on her Mac, not on GitHub, so they cost no Actions minutes.
@@ -114,6 +122,8 @@ For every feature or fix:
 3. Write the smallest code that makes it pass. Tidy up only while it keeps passing.
 
 Throwaway prototypes and config files skip this.
+
+A test double starts from the real module and overrides only what the test needs (in Vitest, `vi.mock` with `importOriginal`). A double written from scratch drifts from its module, and the suite breaks on unrelated changes. Shared doubles live in one file under `tests/`.
 
 A guard on code that already works can't fail first. Prove it another way:
 
@@ -381,6 +391,16 @@ A required check that can't apply to a change (for example, screenshots for a do
 
 If the repo has a GitHub wiki, keep a plain-language dashboard there with progressive disclosure. It links to every document in this table, Storybook, and the skills used, so Sharon can find everything without reading code.
 
+### Docs are copy
+
+Every file in the table is read by people, so it's written with `ux-writer`, not from memory of what a README looks like.
+
+1. Name the readers before writing: who opens this file, and what each one came for. A README has at least three: someone seeing the product, someone about to change the code, and someone judging the work.
+2. Keep the section names developers already know (Getting started, Project structure, Contributing, Releases), with the house voice inside them. A reader who has seen a hundred READMEs orients by the headings; a new name for an old section costs them a second each time.
+3. Before rewriting, list every idea the old text holds. After, a separate agent checks each one is still there. A rewrite that reads well and dropped a dozen facts is worse than the file it replaced.
+4. Run the `ux-writer` checker on the result and give every finding an outcome.
+5. Check every path, port, command and link against the repo as it is today. Stale instructions are what make a reader stop trusting the whole file.
+
 ## 11. Learning mode
 
 Sharon is a designer learning to work in code. The repo should teach as it grows.
@@ -408,7 +428,7 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof. When the agent can't run the tests (packages built for her Mac), Sharon's run or the pull request check is the proof
 - [ ] A different agent reviewed it for bugs, security and code quality (Thermos in Cursor, or Codex review on GitHub)
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
-- [ ] Docs and glossary updated if behavior, a rule, or a new term changed
+- [ ] Docs and glossary updated if behavior, a rule, or a new term changed; a rewritten doc went through "Docs are copy"
 - [ ] Small, focused commit with a clear message, made as soon as the change is done; pushed with its chunk
 - [ ] Nothing left unsaved: the check in "Start and end clean" shows nothing from this session
 - [ ] Pull request opens with "Your turn", shows before and after pictures, and is merged the same day or the next; no stacking
