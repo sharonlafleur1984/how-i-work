@@ -107,11 +107,11 @@ Unsaved work hides. A branch switch moves it into a stash, and a new branch from
    - **A push after the merge isn't on `main`.** If Sharon merged the pull request before the last push, say so at once and open a new pull request for what's left.
 5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything. The last message says "Nothing left uncommitted" and how many commits are waiting to be pushed.
 
-These steps run on her Mac, not on GitHub, so they cost no Actions minutes.
+None of these steps run on GitHub's servers, so they cost no Actions minutes.
 
 ### Run git cleanup only on her Mac
 
-A Linux or cloud shell sees her repos under different paths. From there, `git worktree prune`, `git worktree remove` and `git gc --prune` treat her other work folders as missing and erase git's records of them.
+A Linux or cloud shell sees her repos under different paths. From there, `git worktree prune`, `git worktree remove` and `git gc --prune` treat her other work folders as missing and erase git's records of them. Run git cleanup on her Mac, or not at all.
 
 ### Tests come first
 
@@ -228,7 +228,7 @@ Use the native element for each job before anything else.
 ## 4. CSS architecture
 
 - Order the cascade layers as `@layer reset, tokens, base, layout, components, utilities, overrides;`
-- No `!important`, except the reduce-motion rule, which has to beat every other animation.
+- No `!important` outside `overrides`. The one exception is honoring a person's accessibility setting (reduce motion, forced colors, more contrast), where their choice has to win over every other style. The goal is zero everywhere else.
 - No ID selectors.
 - Keep specificity low and flat.
 - Components only use semantic or component tokens, never raw values or primitives.

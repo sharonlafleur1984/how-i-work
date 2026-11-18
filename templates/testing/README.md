@@ -1,6 +1,6 @@
 # Starter test kit
 
-**Copy into a new repo once it has code worth protecting.** Each file says where it goes.
+**Copy it into a new repo** once the repo has code worth protecting. Each file says where it goes.
 
 | File | Goes in | What it does |
 |---|---|---|
@@ -8,7 +8,7 @@
 | [tests/setup.ts](tests/setup.ts) | `tests/` | Starts each test clean, with stand-ins for what the test browser lacks |
 | [tests/global-setup.ts](tests/global-setup.ts) | `tests/` | Builds generated files once, before any test runs |
 | [tests/css.ts](tests/css.ts) | `tests/` | One shared way for tests to read CSS |
-| [tests/css-rules.test.ts](tests/css-rules.test.ts) | `tests/` | No `!important` (except reduce motion), no ID selectors, logical spacing |
+| [tests/css-rules.test.ts](tests/css-rules.test.ts) | `tests/` | No `!important` (except to honor reduce motion, forced colors or more contrast), no ID selectors, logical spacing |
 | [tests/axe.test.tsx](tests/axe.test.tsx) | `tests/` | Fails on any axe accessibility issue on the main page |
 | [test.yml](test.yml) | `.github/workflows/` | Runs the tests on every pull request |
 
