@@ -43,11 +43,13 @@ Before adding a check, dependency, file or doc, say in one line what it guards a
 
 Fix the rule, file or component that already exists first. Leave the semantic layer (the domain package, with its names, types and schemas) and the docs cleaner than you found them. When a change touches a domain concept, update the semantic layer and the docs together.
 
-### Archive, never delete
+### Delete dead code, because git keeps it
 
-Anything that leaves the live work (a picture, a build, a function nothing calls) moves to `archive/` at its old path. A row in `archive/README.md` says what it is, where it came from and why it's parked.
+Dead code gets deleted, not moved. Git history keeps every deleted line, so nothing is lost. A folder of old code drifts instead: searches find it, agents read it, and something imports it by mistake.
 
-Builds, tests and lint skip `archive/`. Sharon decides what leaves the archive, the way she clears the Archive page in her Figma files. Ask before archiving anything the current task didn't make.
+Archive only what git makes hard to get back, like pictures and exported designs. They move to `archive/` at their old path, with a row in `archive/README.md` saying why. Builds, tests and lint skip `archive/`, and Sharon decides what leaves it.
+
+Ask before deleting or archiving anything the current task didn't make.
 
 ### Make big version jumps only for a reason
 
@@ -103,9 +105,9 @@ Unsaved work hides. A branch switch moves it into a stash, and a new branch from
 2. **Short-lived branches from fresh `main` (trunk-based development).** Every branch starts from `main` right after a Pull, never from another branch or an old copy. One task per branch, merged into `main` within a day or two. If a branch has to live longer, update it from `main` every day so overlaps stay small. Unfinished work that needs to land merges behind a switch (like Voyager's phase gating) instead of waiting on a side branch. Never keep a long-running branch that collects other branches' work; that's a second `main`.
 3. **One branch per repo at a time.** Work on the branch that's already checked out. Don't start another branch or worktree, and don't switch branches, while it's open. Start the next branch only after it's merged, from her newest work (never an old local `main`). A new branch never tracks `main`, so a push can't land there.
 4. **Commit as you go, push in chunks.** Commit each change as soon as it's done, so nothing sits uncommitted. Push when a chunk of commits is ready, then keep going on the same branch.
-   - **Stage files by name, never `git add -A` or a folder.** The checkout is shared: Sharon or another agent may be editing it at the same time. Run `git status --short` right before every commit and stage only the files this task touched. Leave other changes alone: name them in the summary, don't revert them.
+   - **Stage files by name, never `git add -A` or a folder.** Another session may be editing the same checkout. Run `git status --short` right before every commit, and stage only the files this task touched. Name other changes in the summary, and leave them as they are.
    - **A push after the merge isn't on `main`.** If Sharon merged the pull request before the last push, say so at once and open a new pull request for what's left.
-5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything. The last message says "Nothing left uncommitted" and how many commits are waiting to be pushed.
+5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything this session changed, and name any other changes you find. The last message says "Nothing left uncommitted from this session" and how many commits are waiting to be pushed.
 
 None of these steps run on GitHub's servers, so they cost no Actions minutes.
 
