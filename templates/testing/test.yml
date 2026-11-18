@@ -1,0 +1,20 @@
+# Goes in .github/workflows/. Runs the tests on every pull request, so it shows pass or fail before anything merges.
+# Uses about 1 to 2 minutes of GitHub Actions time per run.
+# Every dependency must install from npm or GitHub. A "file:../other-repo" dependency only exists on your Mac,
+# so this check can't see it and fails.
+name: Tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test

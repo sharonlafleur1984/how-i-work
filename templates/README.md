@@ -1,6 +1,6 @@
 # Templates
 
-**Last updated:** October 14, 2026
+**Last updated:** November 18, 2026
 
 **Starter files for every new repo/project**
 
@@ -9,6 +9,7 @@
 - **[voice.md](voice.md):** How to communicate with a particular user persona. Goes in `docs/voice.md`.
 - **[Documents.md](Documents.md):** Every document in the repo and a link to where it can be opened/edited/deleted. Goes in `docs/wiki/Documents.md`.
 - **[publish-wiki.yml](publish-wiki.yml):** Publishes `docs/wiki/` to the GitHub wiki tab on every merge to back it up and store the history. Goes in `.github/workflows/`.
+- **[testing/](testing/README.md):** A starter test kit: Vitest setup, CSS rules, an axe check and a workflow that runs the tests on every pull request. Copy it once the repo has code worth protecting.
 - **[pull_request_template.md](pull_request_template.md):** Every pull request opens with "Your turn": what to look at, what to decide and what to do next. The details fold away below. Goes in `.github/`.
 - **Screenshot checks:** for a repo with screens, copy the visual check from the [design system's code](https://github.com/sharonlafleur1984/lantern-code/tree/main/.github/workflows) (private). It shows changes as before-and-after pictures in the pull request, and passes in seconds when no screen can change.
 - **Netlify sites:** before setting one up, read [How everything connects](https://github.com/sharonlafleur1984/designer-toolkit/wiki/Connections). Copy a prototype's `netlify.toml` from there, so planning stays off the public site, then add the new site's section to that page.
