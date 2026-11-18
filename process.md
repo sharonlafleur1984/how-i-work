@@ -1,6 +1,6 @@
 # The process
 
-**Last updated:** October 14, 2026
+**Last updated:** November 17, 2026
 
 How a project goes from a problem to shipped work.
 
@@ -75,6 +75,12 @@ Each skill reviews itself after a task and proposes any changes to improve my sk
 - Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
 - The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged ([template](templates/publish-wiki.yml)).
 - Every Netlify site and the Supabase setup are listed on one page, [How everything connects](https://github.com/sharonlafleur1984/designer-toolkit/wiki/Connections). A pull request that adds or changes a Netlify site, its `netlify.toml`, or anything in Supabase updates that page at the same time.
+
+### Pages are checked for accessibility before they're shared
+
+- Before sharing a page, audit its localhost or Netlify preview with [A11y Agent](https://github.com/sharonlafleur1984/A11y_Agent) (axe) and fix any WCAG failures.
+- axe catches only part of WCAG. Also Tab through the page before calling it accessible.
+- For a whole site, run a batch audit from the sitemap. It saves `pages.csv` and `issues.csv` to open in Google Sheets.
 
 ### Decisions are always logged and findable
 
