@@ -1,4 +1,6 @@
-# Goes in .github/workflows/. Runs the tests on every pull request, so it shows pass or fail before anything merges.
+# Public repos only. Goes in .github/workflows/. Runs the tests on every pull request, so it shows pass or fail before
+# anything merges. A private repo gets no workflow: its Actions minutes cost money, and with the budget at $0 every run
+# fails and GitHub asks for money. There, the pre-push hook (templates/testing/pre-push) is the check.
 # Uses about 1 to 2 minutes of GitHub Actions time per run.
 # Every dependency must install from npm or GitHub. A "file:../other-repo" dependency only exists on your Mac,
 # so this check can't see it and fails.

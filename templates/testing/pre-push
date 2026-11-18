@@ -1,0 +1,8 @@
+#!/bin/sh
+# Goes in .githooks/pre-push (chmod +x), with "prepare": "git config core.hooksPath .githooks" in package.json so
+# npm install sets it up. Runs before every push: lint, types, tests and the build, on your Mac. In a private repo this
+# is the whole check (no GitHub Actions: the minutes cost money), so a push that would fail stops here. Skip once, only
+# when Sharon says so:  git push --no-verify
+# Change the two commands to the repo's own scripts.
+echo "Checking before the push (lint, types, tests, build)..."
+npm run check --silent && npm run build --silent
