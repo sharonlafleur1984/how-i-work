@@ -329,6 +329,8 @@ This is the full pipeline a grown product needs, not a day-one checklist. Add ea
 
 Until then, a missing layer is a note, not a gap.
 
+Start from the [starter test kit](https://github.com/sharonlafleur1984/how-i-work/tree/main/templates/testing) in how-i-work: Vitest setup, CSS rules, an axe check and a pull request workflow.
+
 ### Layers, tools and gates
 
 Each layer runs a tool and must pass its gate.
@@ -353,6 +355,8 @@ Each layer runs a tool and must pass its gate.
 A required check that can't apply to a change (for example, screenshots for a docs-only change) passes in seconds instead of running in full. Anything it doesn't recognize still gets the full check.
 
 - Git hooks (Lefthook or Husky) run lint, types, and unit tests before commit.
+- Tests only read shared files. Anything generated (CSS built from Figma tokens, say) is built once before the tests start, in Vitest's global setup. Test files run in parallel, so a test that rebuilds a file catches another one mid-write and fails at random.
+- Every dependency installs from npm or GitHub. A `file:../other-repo` dependency exists only on Sharon's Mac, so the pull request check can't install it.
 - GitHub Actions runs everything.
 - Netlify builds a preview link for every pull request.
 - Storybook is published, so every component has a shareable link.
@@ -394,7 +398,7 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] Reduced motion respected
 - [ ] Storybook page added or updated; Figma link and Code Connect updated if used
 - [ ] Each new test was seen failing before the code was written
-- [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof
+- [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof. When the agent can't run the tests (packages built for her Mac), Sharon's run or the pull request check is the proof
 - [ ] A different agent reviewed it for bugs, security and code quality (Thermos in Cursor, or Codex review on GitHub)
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
 - [ ] Docs and glossary updated if behavior, a rule, or a new term changed
@@ -457,3 +461,4 @@ The debugging method, tests first and proof before done are adapted from [Superp
 | 2026-11-16 | Three places every time (Figma tokens, Figma docs, code); tokens nested, one per job, and tested against Figma; focus contrast tested from the tokens; keyboard probes for custom widgets. Found when the code's focus ring pointed at border/primary while Figma's decision was border/focus/primary, and from Dave Broschinsky's accessibility additions. |
 | 2026-11-16 | Never run git cleanup from a shell that can't see her Mac's paths. Found when `git worktree prune` from a Linux shell erased the records of 12 agent work folders in voyager-code and lantern-code; one held 36 files of unsaved marketing-page work, rescued to a branch. |
 | 2026-11-17 | Definition of done now includes an a11y-agent axe audit of the localhost or Netlify preview, when the tool is available. Found when setting up David Broschinsky's A11y Agent as an MCP server in the desktop app. Cloud agents without it aren't blocked; the Playwright axe tests still run. |
+| 2026-11-18 | Tests only read shared files; anything generated is built once in global setup. Dependencies install from npm or GitHub, never `file:../`. When the agent can't run the tests, Sharon's run or the pull request check is the proof. Points to the new starter test kit. Found when voyager-code tests failed at random (6 test files rebuilding one CSS file in parallel), and the pull request check was blocked by a `file:../lantern-code` dependency. |
