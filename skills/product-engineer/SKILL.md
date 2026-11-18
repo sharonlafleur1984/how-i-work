@@ -99,9 +99,11 @@ Unsaved work hides. A branch switch moves it into a stash, and a new branch from
 4. **Commit as you go, push in chunks.** Commit each change as soon as it's done, so nothing sits uncommitted. Push when a chunk of commits is ready, then keep going on the same branch.
 5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything. The last message says "Nothing left uncommitted" and how many commits are waiting to be pushed.
 
-Nothing in this runs on GitHub's servers, so it costs no Actions minutes.
+These steps run on her Mac, not on GitHub, so they cost no Actions minutes.
 
-**Never run git cleanup from a shell that can't see Sharon's Mac paths.** A Linux or cloud shell sees her repos under different paths, so `git worktree prune`, `git worktree remove` or `git gc --prune` there treat her other work folders as missing and erase git's records of them. Run those only on her Mac, or not at all.
+### Run git cleanup only on her Mac
+
+A Linux or cloud shell sees her repos under different paths. From there, `git worktree prune`, `git worktree remove` and `git gc --prune` treat her other work folders as missing and erase git's records of them.
 
 ### Tests come first
 
@@ -111,7 +113,13 @@ For every feature or fix:
 2. Write a test for that, run it, and watch it fail for the right reason. A test that passes before the code exists checks nothing.
 3. Write the smallest code that makes it pass. Tidy up only while it keeps passing.
 
-Throwaway prototypes and config files are the exceptions.
+Throwaway prototypes and config files skip this.
+
+A guard on code that already works can't fail first. Prove it another way:
+
+1. Break the code on purpose.
+2. Watch the test fail.
+3. Undo the break.
 
 ## 1. Order of work
 
@@ -210,7 +218,7 @@ Use the native element for each job before anything else.
 ## 4. CSS architecture
 
 - Order the cascade layers as `@layer reset, tokens, base, layout, components, utilities, overrides;`
-- No `!important` outside `overrides`. The goal is zero.
+- No `!important`, except the reduce-motion rule, which has to beat every other animation.
 - No ID selectors.
 - Keep specificity low and flat.
 - Components only use semantic or component tokens, never raw values or primitives.
@@ -317,7 +325,7 @@ The visual tests catch anything missed.
 
 ## 9. Quality pipeline
 
-The pipeline runs locally on commit and in CI on every pull request.
+The pipeline runs in CI on every pull request. Sharon runs `npm test` on her Mac when the agent can't.
 
 This is the full pipeline a grown product needs, not a day-one checklist. Add each layer when there is something for it to protect.
 
@@ -354,7 +362,6 @@ Each layer runs a tool and must pass its gate.
 
 A required check that can't apply to a change (for example, screenshots for a docs-only change) passes in seconds instead of running in full. Anything it doesn't recognize still gets the full check.
 
-- Git hooks (Lefthook or Husky) run lint, types, and unit tests before commit.
 - Tests only read shared files. Anything generated (CSS built from Figma tokens, say) is built once before the tests start, in Vitest's global setup. Test files run in parallel, so a test that rebuilds a file catches another one mid-write and fails at random.
 - Every dependency installs from npm or GitHub. A `file:../other-repo` dependency exists only on Sharon's Mac, so the pull request check can't install it.
 - GitHub Actions runs everything.
@@ -397,7 +404,7 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] Works at phone, tablet, and desktop widths; no horizontal scroll
 - [ ] Reduced motion respected
 - [ ] Storybook page added or updated; Figma link and Code Connect updated if used
-- [ ] Each new test was seen failing before the code was written
+- [ ] Each new test was seen failing, before the code existed or on a deliberate break
 - [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof. When the agent can't run the tests (packages built for her Mac), Sharon's run or the pull request check is the proof
 - [ ] A different agent reviewed it for bugs, security and code quality (Thermos in Cursor, or Codex review on GitHub)
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
@@ -435,7 +442,7 @@ At the end of a task, ask three questions.
 - Bring every change you found in one proposal. Group small fixes under one yes, and give bigger changes one line each.
 - Don't drip changes out, and don't hold back a real one.
 - Prefer rewriting or removing a rule over adding one.
-- When a change is approved, update the skill and any public copy (such as `docs/skills/` in a repo), and add a change-log line.
+- When a change is approved, update the skill and any public copy, such as `docs/skills/` in a repo. Add a line to [the change log](https://github.com/sharonlafleur1984/how-i-work/blob/main/skills/product-engineer/CHANGELOG.md).
 
 Source: Carol Dweck's "Mindset" ([Farnam Street summary](https://fs.blog/carol-dweck-mindset/)).
 
@@ -443,22 +450,4 @@ The debugging method, tests first and proof before done are adapted from [Superp
 
 ## Change log
 
-| Date | Change |
-|---|---|
-| 2026-09-25 | Created from front-end best practice research. |
-| 2026-09-25 | Reframed around moving from a Claude artifact to a real repo; added nesting and patterns, prototype matching, the design and code loop, and learning mode. |
-| 2026-09-26 | Added growth mindset, self-review, and self-healing. |
-| 2026-09-26 | Renamed to product-engineer, since it covers front end and back end. Chart.js is the default for charts. |
-| 2026-09-26 | New description with clear triggers and handoffs. Charts get built only from a design `product-designer` has already tried in the UI. Button levels moved to product-designer. Explained DTCG, ADR and APG on first use. Says "Sharon" instead of "the owner." Changes now come in one grouped proposal. |
-| 2026-09-26 | Shorter description. The full list of when to use it, and when not to, moved into the skill. |
-| 2026-10-06 | Added "Every change earns its place": name what a change protects, edit before adding, big version jumps only for a reason, ask why a check failed before fixing it. The quality pipeline now grows with the product instead of being built all at once. |
-| 2026-10-13 | Pull requests open with "Your turn" (look at, decide, then), with pictures in the pull request. Branches are pushed right after each commit. Pull requests stay small and merge within a day. Required checks that can't apply pass fast. Found when Sharon pulled every repo and her glass work was missing, and when she couldn't tell what a pull request needed from her. |
-| 2026-10-20 | Added a debugging method, tests first and proof before done, adapted from Superpowers. Every change now gets a fresh review before merge. |
-| 2026-10-21 | Merged the Oct 13 and Oct 20 edits. The repo copy had Oct 13 and the claude.ai copy had Oct 20; neither had both. |
-| 2026-11-16 | Added "Start and end clean": check unsaved work first, branch from her newest work (never an old `main`), work in your own folder, end with nothing unsaved. Found when an agent built from a stale `main`, hid 27 commits and a stash from localhost, and pushed straight to `main`. Local only, no GitHub costs. |
-| 2026-11-16 | One branch per repo at a time, no extra worktrees. Commit as you go, push in chunks (replaces pushing after every commit). Found when two sessions shared one repo, one switched branches, and the other's uncommitted work ended up on a branch Sharon couldn't see. Matches the rule in voyager-code's AGENTS.md. |
-| 2026-11-16 | Added trunk-based development: short-lived branches from fresh `main`, merged within a day or two, updated daily if longer, unfinished work behind a switch, no long-running collector branches. Found when a collector branch held 27 commits `main` never got and marketing work sat unmerged for days. |
-| 2026-11-16 | Three places every time (Figma tokens, Figma docs, code); tokens nested, one per job, and tested against Figma; focus contrast tested from the tokens; keyboard probes for custom widgets. Found when the code's focus ring pointed at border/primary while Figma's decision was border/focus/primary, and from Dave Broschinsky's accessibility additions. |
-| 2026-11-16 | Never run git cleanup from a shell that can't see her Mac's paths. Found when `git worktree prune` from a Linux shell erased the records of 12 agent work folders in voyager-code and lantern-code; one held 36 files of unsaved marketing-page work, rescued to a branch. |
-| 2026-11-17 | Definition of done now includes an a11y-agent axe audit of the localhost or Netlify preview, when the tool is available. Found when setting up David Broschinsky's A11y Agent as an MCP server in the desktop app. Cloud agents without it aren't blocked; the Playwright axe tests still run. |
-| 2026-11-18 | Tests only read shared files; anything generated is built once in global setup. Dependencies install from npm or GitHub, never `file:../`. When the agent can't run the tests, Sharon's run or the pull request check is the proof. Points to the new starter test kit. Found when voyager-code tests failed at random (6 test files rebuilding one CSS file in parallel), and the pull request check was blocked by a `file:../lantern-code` dependency. |
+The history of this skill lives in [how-i-work](https://github.com/sharonlafleur1984/how-i-work/blob/main/skills/product-engineer/CHANGELOG.md).
