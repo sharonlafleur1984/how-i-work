@@ -57,7 +57,7 @@ Upgrade a major version when it fixes a security problem, unblocks real work, or
 
 ### When something breaks, find the cause before fixing
 
-If the fix is "add something so the check passes," first ask whether the check protects anything here. Never loosen a rule quietly. Say so in the pull request.
+If the fix is "add something so the check passes," first ask whether the check protects anything here. Never loosen a rule quietly. Say so in the commit message.
 
 For any bug, failing test or odd behavior:
 
@@ -102,12 +102,12 @@ Unsaved work hides. A branch switch moves it into a stash, and a new branch from
    ```sh
    for d in ~/Repos/*/.git; do r=$(dirname "$d"); n=$(git -C "$r" status --porcelain | wc -l | tr -d ' '); u=$(git -C "$r" log --branches --not --remotes --oneline | wc -l | tr -d ' '); s=$(git -C "$r" stash list | wc -l | tr -d ' '); [ "$n$u$s" != "000" ] && echo "$(basename "$r"): $n unsaved files, $u unpushed commits, $s stashes"; done
    ```
-2. **Short-lived branches from fresh `main` (trunk-based development).** Every branch starts from `main` right after a Pull, never from another branch or an old copy. One task per branch, merged into `main` within a day or two. If a branch has to live longer, update it from `main` every day so overlaps stay small. Unfinished work that needs to land merges behind a switch (like Voyager's phase gating) instead of waiting on a side branch. Never keep a long-running branch that collects other branches' work; that's a second `main`.
-3. **One branch per repo at a time.** Work on the branch that's already checked out. Don't start another branch or worktree, and don't switch branches, while it's open. Start the next branch only after it's merged, from her newest work (never an old local `main`). A new branch never tracks `main`, so a push can't land there.
-4. **Commit as you go, push in chunks.** Commit each change as soon as it's done, so nothing sits uncommitted. Push when a chunk of commits is ready, then keep going on the same branch.
+2. **One branch per page or area, named by its start date (trunk-based development).** The name is `<page>/<YYYY-MM-DD>`, using the page names in the project's site map. Navigation gets its own branches (`nav-product`, `nav-marketing`). Anything used across pages, such as components, tokens and the repo's own rules, goes on `shared/<YYYY-MM-DD>`, and so does any change to a file other pages use, even when it's made for one page. Create a branch only at the first change: at most one per page or area per day, and none on a day with no work. Every branch starts from `main` right after a Pull, never from another branch or an old copy, and never tracks `main`. Unfinished work that would show on the page merges behind a dev-only switch. Never keep a long-running branch that collects other branches' work; that's a second `main`.
+3. **Each branch gets its own worktree.** Create it on her Mac at the branch's first change (then `npm install`), and remove it once the branch merges. The main checkout stays on `main`. Two agents in the same repo never share a folder; agents in different repos don't need worktrees.
+4. **Commit as you go, and merge into `main` daily.** Commit each change as soon as it's done, finished or not, so nothing sits uncommitted; the commits name the tasks. Push and merge into `main` every day: `shared` first, then navigation, then pages. No pull requests; the commits are the record, and the pre-push checks must pass.
    - **Stage files by name, never `git add -A` or a folder.** Another session may be editing the same checkout. Run `git status --short` right before every commit, and stage only the files this task touched. Name other changes in the summary, and leave them as they are.
-   - **A push after the merge isn't on `main`.** If Sharon merged the pull request before the last push, say so at once and open a new pull request for what's left.
-5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past two days, say so plainly. Before finishing, commit everything this session changed, and name any other changes you find. The last message says "Nothing left uncommitted from this session" and how many commits are waiting to be pushed.
+   - **A morning check** lists any branch with work not yet in `main` from before today, and any worktree left on a merged branch.
+5. **End clean.** Also say how many days old the branch is and how far behind `main` it is; past one day, say it needs merging today. Before finishing, commit everything this session changed, and name any other changes you find. The last message says "Nothing left uncommitted from this session" and how many commits are waiting to be pushed.
 
 None of these steps run on GitHub's servers, so they cost no Actions minutes.
 
@@ -407,12 +407,12 @@ Every file in the table is read by people, so it's written with `ux-writer`, not
 
 Sharon is a designer learning to work in code. The repo should teach as it grows.
 
-- Every pull request opens with **Your turn**, so Sharon knows what to do in 3 seconds:
+- Every daily merge summary opens with **Your turn**, so Sharon knows what to do in 3 seconds:
   - **Look at:** deep links to the 2 or 3 stories or pages that changed in the preview
   - **Decide:** the one question for her, or "Nothing, just approve"
   - **Then:** merge, or what to merge first
 - Below it, a folded "What changed and how it works" section in plain language covers what the user will notice, which files changed, and one sentence on the concept behind it.
-- Screen changes show as before-and-after pictures in the pull request itself, never only in a download.
+- Screen changes show as before-and-after pictures in the merge summary itself, never only in a download.
 - The first time a new term, tool, or file type appears, explain it in plain language and add it to `docs/glossary.md`.
 - Leave short comments in code only where the why is not obvious. Explain decisions, not syntax.
 - When there are two reasonable ways to do something, name both briefly and say which was chosen and why.
@@ -427,18 +427,18 @@ Sharon is a designer learning to work in code. The repo should teach as it grows
 - [ ] Reduced motion respected
 - [ ] Storybook page added or updated; Figma link and Code Connect updated if used
 - [ ] Each new test was seen failing, before the code existed or on a deliberate break
-- [ ] The whole pipeline was run fresh, and its result is in the pull request. "Should pass" and another agent's "done" are not proof. When the agent can't run the tests (packages built for her Mac), Sharon's run or the pull request check is the proof
+- [ ] The whole pipeline was run fresh, and its result is in the merge summary. "Should pass" and another agent's "done" are not proof. When the agent can't run the tests (packages built for her Mac), Sharon's run or the pre-push check is the proof
 - [ ] A different agent reviewed it for bugs, security and code quality (Thermos in Cursor, or Codex review on GitHub)
 - [ ] Prototype parity row updated if this rebuilds part of the prototype
 - [ ] Docs and glossary updated if behavior, a rule, or a new term changed; a rewritten doc went through "Docs are copy"
-- [ ] Small, focused commit with a clear message, made as soon as the change is done; pushed with its chunk
+- [ ] Small, focused commit with a clear message, made as soon as the change is done, on the right page or `shared` branch
 - [ ] Nothing left unsaved: the check in "Start and end clean" shows nothing from this session
-- [ ] Pull request opens with "Your turn", shows before and after pictures, and is merged the same day or the next; no stacking
+- [ ] Merged into `main` the same day, with a "Your turn" summary and before and after pictures; no long-running branches
 
 ## 13. Working with Sharon
 
 - Writing to Sharon follows `working-with-sharon`.
-- At the start of a session, tell her which pull requests are open and which are waiting on her.
+- At the start of a session, tell her which branches have work not yet in `main`.
 - She is a designer learning to work in code. Explain each term in plain language the first time it comes up.
 
 ## 14. Growth mindset: how this skill keeps getting better

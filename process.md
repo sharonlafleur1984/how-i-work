@@ -66,16 +66,17 @@ For the best results, use these learnings to help inform your decisions and prov
 
 Each skill reviews itself after a task and proposes any changes to improve my skills, to help me improve my skill creation development, and help me to grow as a designer. Its change log shows what changed and why.
 
-### Each change triggers a pull request
+### Each page gets a branch, and everything merges daily
 
-- Code, docs, and the wiki all change through pull requests I review and merge.
-- Every pull request opens with "Your turn": what to look at, what to decide and what to do next ([template](templates/pull_request_template.md)). Screen changes show as before-and-after pictures in the pull request.
-- Pull requests stay small and merge the same day or the next. Branches are pushed right after each commit, so work is backed up even before it's ready.
-- Every repo's main branch is protected so changes can only arrive through a pull request ([cheat sheet](templates/github-ruleset.md)).
-- **Private repos run no GitHub Actions.** Their minutes cost money, and with the Actions budget at $0 every run fails and GitHub asks for money on every pull request. The checks run on my Mac instead, in the pre-push hook ([template](templates/testing/pre-push)): lint, types, tests and the build, and a pull request merges on that. No workflow file, no required status check. Public repos (the plan repos, the wiki publish) may keep Actions, which are free there.
+- Each page or area gets its own branch, named by the day it started: `edit/2026-11-19`. Navigation and shared work (components, tokens, anything several pages use) get their own branches, so page work doesn't collide.
+- A branch is created only when the first change is made, and each one gets its own worktree, so several agents can work at once without overwriting each other.
+- The commits are the record. They name each task, finished or not, so I can jump between tasks in a day.
+- Everything merges into main daily: shared first, then navigation, then pages. No pull requests. A morning check tells me anything left unmerged.
+- Every repo's main branch is protected from being deleted or rewritten ([cheat sheet](templates/github-ruleset.md)).
+- **Private repos run no GitHub Actions.** Their minutes cost money, and with the Actions budget at $0 every run fails and GitHub asks for money on every pull request. The checks run on my Mac instead, in the pre-push hook ([template](templates/testing/pre-push)): lint, types, tests and the build, and a branch merges into main on that. No workflow file, no required status check. Public repos (the plan repos, the wiki publish) may keep Actions, which are free there.
 - Keeping a history of how the skills change, tells a story and helps AI learn how to give better prompt results.
 - The GitHub Wiki pages are a project's documentation and live in the repo and are published when updates are merged ([template](templates/publish-wiki.yml)).
-- Every Netlify site and the Supabase setup are listed on one page, [How everything connects](https://github.com/sharonlafleur1984/designer-toolkit/wiki/Connections). A pull request that adds or changes a Netlify site, its `netlify.toml`, or anything in Supabase updates that page at the same time.
+- Every Netlify site and the Supabase setup are listed on one page, [How everything connects](https://github.com/sharonlafleur1984/designer-toolkit/wiki/Connections). A change that adds or changes a Netlify site, its `netlify.toml`, or anything in Supabase updates that page in the same commit.
 
 ### Pages are checked for accessibility before they're shared
 
